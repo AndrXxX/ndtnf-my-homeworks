@@ -6,6 +6,21 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "bin": {
+    "date-util": "./date-util.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndrXxX/ndse-homeworks.git"
+  },
+  "author": "Andrew Garetov <andrew1gar@yandex.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndrXxX/ndse-homeworks/issues"
+  },
+  "homepage": "https://github.com/AndrXxX/ndse-homeworks/002-console#readme",
+  "dependencies": {
+    "date-fns": "^2.29.3",
+    "yargs": "^16.2.0"
+  }
 }
