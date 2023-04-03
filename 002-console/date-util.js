@@ -1,5 +1,6 @@
 const yargs = require('yargs/yargs')
 const { hideBin } = require('yargs/helpers')
+const DateParser = require('./Utils/DateParser');
 
 const argv = yargs(hideBin(process.argv))
   .usage('Usage: $0 <command> [options]')
@@ -8,19 +9,27 @@ const argv = yargs(hideBin(process.argv))
   .command('sub', 'Дата в прошлом')
   .option('day', {
     alias: 'd',
-    type: 'boolean',
     description: 'дата в календарном месяце'
   })
   .option('month', {
     alias: 'm',
-    type: 'boolean',
     description: 'месяц'
   })
   .option('year', {
     alias: 'y',
-    type: 'boolean',
     description: 'год'
   })
   .argv
 
-console.log(argv)
+const dateParser = new DateParser(argv._);
+dateParser.setDay(argv.d);
+dateParser.setMonth(argv.m);
+dateParser.setYear(argv.y);
+
+try {
+  console.log(dateParser.parse());
+  return process.exit(0);
+} catch (e) {
+  console.log(e.message);
+  return process.exit(-1);
+}
