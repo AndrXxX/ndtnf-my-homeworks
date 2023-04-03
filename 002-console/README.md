@@ -26,3 +26,9 @@
     *  `node date-util.js sub -m 3` или `node date-util.js sub -month 3`
     *  `node date-util.js sub -y 6` или `node date-util.js sub -year 6`
     *  различные комбинации, например: `node date-util.js sub --day 1 -m 2 --year 5`
+
+### Задача 2
+Утилита командной строки, которая играет в игру "Загадай число".
+
+Использование:
+* `node guess-number.js`
