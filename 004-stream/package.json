@@ -6,6 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "game-stat": "./game-stat.js",
+    "heads-tails-game": "./heads-tails-game.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AndrXxX/ndse-homeworks.git"
