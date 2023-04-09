@@ -7,9 +7,9 @@
 ### Задача 1
 Консольная игра "Орел или решка".
 
-Использование: `node heads-tails-game.js --fileName="filename.log"`
+Использование: `node heads-tails-game.js -f=file.log`
 
 ### Задача 2
 Программа-анализатор игровых логов
 
-Использование: `node game-stat.js --fileName="filename.log"`
+Использование: `node game-stat.js -f=file.log`
