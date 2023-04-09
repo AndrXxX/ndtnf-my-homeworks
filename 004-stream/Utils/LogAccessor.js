@@ -41,6 +41,21 @@ const getAccessor = (fileName) => {
   return accessor;
 }
 
+const getReader = (fileName) => {
+  const file = path.join(__dirname, LOGS_DIR, fileName);
+  if (!checkAccess(file)) {
+    console.error(`Не удалось получить доступ к файлу ${file}`)
+    process.exit(-1);
+  }
+  const accessor = new LogAccessor();
+  const readerStream = fs.createReadStream(file);
+  readerStream.setEncoding('utf8');
+  readerStream.on('data', (chunk) => accessor.emit('data', chunk));
+  readerStream.on('end', () => accessor.emit('end'));
+  return accessor;
+}
+
 module.exports = {
   getLogger: fileName => getAccessor(fileName),
+  getReader: fileName => getReader(fileName),
 };
