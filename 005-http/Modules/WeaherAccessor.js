@@ -1,8 +1,6 @@
 const EventEmitter = require('events');
 const http = require('http');
-
-const API_HOST = 'http://api.weatherstack.com/';
-const API_KEY = process.env.API_KEY;
+const { apiKey, apiHost } = require('../config');
 const methods = {
   current: 'current',
 };
@@ -27,7 +25,7 @@ const getResponse = (url, callback) => {
 }
 
 const buildUrl = (method, query) => {
-  return `${API_HOST}${method}?access_key=${API_KEY}&query=${query}`;
+  return `${apiHost}${method}?access_key=${apiKey}&query=${query}`;
 }
 
 const onRequestCurrent = (accessor, city) => {

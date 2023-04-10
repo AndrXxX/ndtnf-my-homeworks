@@ -1,10 +1,11 @@
-const yargs = require('yargs/yargs')
-const { hideBin } = require('yargs/helpers')
+const yargs = require('yargs/yargs');
+const { hideBin } = require('yargs/helpers');
+const { city } = require('./config');
 
 const argv = yargs(hideBin(process.argv))
   .option('city', {
     alias: 'c',
-    required: true,
+    default: city,
     description: 'город'
   })
   .usage('Usage: node $0 -c="place" [--city="place"] [--help]')
