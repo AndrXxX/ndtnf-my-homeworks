@@ -4,7 +4,7 @@
   "description": "Домашнее задание к занятию «2.1. Express»\n",
   "main": "index.js",
   "scripts": {
-    "run": "node index.js",
+    "start": "node index.js",
     "dev": "nodemon index.js"
   },
   "author": "Andrew Garetov <andrew1gar@yandex.ru>",
