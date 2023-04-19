@@ -2,10 +2,9 @@ const express = require('express');
 const router = express.Router();
 const booksStore = require("../../Store/BookStore");
 const error404Middleware = require("../../middleware/error404");
+const handlers = require('../../handlers/handlers');
 
-router.get('/', (req, res) => {
-  res.json(booksStore.getAll());
-});
+router.get('/', handlers.books.fetchAll);
 
 router.get('/:id',
   (req, res, next) => {
