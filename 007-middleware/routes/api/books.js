@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const booksStore = require("../../Store/BookStore");
 const error404Middleware = require("../../middleware/error404");
 const handlers = require('../../handlers/handlers');
 
@@ -19,14 +18,7 @@ router.put('/:id',
 );
 
 router.delete('/:id',
-  (req, res, next) => {
-    const result = booksStore.delete(req.params.id);
-    if (result) {
-      res.code = 201;
-      return res.json('ok');
-    }
-    next();
-  },
+  handlers.books.delete,
   error404Middleware,
 );
 

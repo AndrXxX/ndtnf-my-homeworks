@@ -6,5 +6,6 @@ module.exports = {
     fetchById: require('./books/FetchByIdHandler'),
     add: require('./books/AddHandler'),
     update: require('./books/UpdateHandler'),
+    delete: require('./books/DeleteHandler'),
   }
 };
