@@ -7,13 +7,7 @@ const handlers = require('../../handlers/handlers');
 router.get('/', handlers.books.fetchAll);
 
 router.get('/:id',
-  (req, res, next) => {
-    const book = booksStore.get(req.params.id);
-    if (book) {
-      return res.json(book);
-    }
-    next();
-  },
+  handlers.books.fetchById,
   error404Middleware,
 );
 
