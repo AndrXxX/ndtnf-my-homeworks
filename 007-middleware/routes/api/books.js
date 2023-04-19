@@ -6,6 +6,11 @@ const handlers = require('../../handlers/handlers');
 
 router.get('/', handlers.books.fetchAll);
 
+router.get('/:id/download',
+  handlers.books.download,
+  error404Middleware,
+);
+
 router.get('/:id',
   handlers.books.fetchById,
   error404Middleware,

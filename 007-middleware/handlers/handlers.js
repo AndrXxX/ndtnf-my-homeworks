@@ -7,5 +7,6 @@ module.exports = {
     add: require('./books/AddHandler'),
     update: require('./books/UpdateHandler'),
     delete: require('./books/DeleteHandler'),
+    download: require('./books/DownloadHandler'),
   }
 };
