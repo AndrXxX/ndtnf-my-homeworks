@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const error404Middleware = require("../../middleware/error404");
+const bookMulter = require('../../middleware/bookMulter');
 const handlers = require('../../handlers/handlers');
 
 router.get('/', handlers.books.fetchAll);
@@ -10,7 +11,10 @@ router.get('/:id',
   error404Middleware,
 );
 
-router.post('', handlers.books.add);
+router.post('/',
+  bookMulter.single('fileBook'),
+  handlers.books.add,
+);
 
 router.put('/:id',
   handlers.books.update,
