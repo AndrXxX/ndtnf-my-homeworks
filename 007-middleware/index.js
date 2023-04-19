@@ -1,13 +1,11 @@
 const express = require('express');
 const booksStore = require('./Store/BookStore');
+const userRouter = require('./routes/user');
 
-const app = express()
-app.use(express.json())
+const app = express();
+app.use(express.json());
 
-app.post('/api/user/login', (req, res) => {
-  res.code = 201;
-  res.json({ id: 1, mail: "test@mail.ru" });
-});
+app.use('/api/user/login', userRouter);
 
 app.get('/api/books', (req, res) => {
   res.json(booksStore.getAll());
