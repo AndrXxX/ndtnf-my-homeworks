@@ -17,6 +17,7 @@ router.post('/',
 );
 
 router.put('/:id',
+  bookMulter.single('fileBook'),
   handlers.books.update,
   error404Middleware,
 );
