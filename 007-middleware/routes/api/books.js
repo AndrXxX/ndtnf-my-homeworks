@@ -11,22 +11,10 @@ router.get('/:id',
   error404Middleware,
 );
 
-router.post('', (req, res) => {
-  const book = booksStore.add(req.body);
-  res.code = 201;
-  res.json(book);
-});
+router.post('', handlers.books.add);
 
 router.put('/:id',
-  (req, res, next) => {
-    const book = booksStore.get(req.params.id);
-    if (book) {
-      book.fillByParams(req.body);
-      res.code = 201;
-      return res.json(book);
-    }
-    next();
-  },
+  handlers.books.update,
   error404Middleware,
 );
 
