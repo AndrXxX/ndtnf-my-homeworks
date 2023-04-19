@@ -1,11 +1,11 @@
 const express = require('express');
 const booksStore = require('./Store/BookStore');
-const userRouter = require('./routes/user');
+const apiRouter = require('./routes/api');
 
 const app = express();
 app.use(express.json());
 
-app.use('/api/user/login', userRouter);
+app.use('/api', apiRouter);
 
 app.get('/api/books', (req, res) => {
   res.json(booksStore.getAll());
