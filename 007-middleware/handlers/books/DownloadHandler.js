@@ -2,15 +2,7 @@ const booksStore = require("../../store/BookStore");
 const path = require('path');
 const mime = require('mime');
 const fs = require('fs');
-
-const checkAccess = (file) => {
-  try {
-    fs.accessSync(file, fs.constants.R_OK);
-    return true;
-  } catch (e) {
-    return false;
-  }
-}
+const uploadDirAccessor = require('../../utils/UploadDirAccessor');
 
 module.exports = (req, res, next) => {
   const book = booksStore.get(req.params.id);
@@ -18,7 +10,7 @@ module.exports = (req, res, next) => {
     return next();
   }
   const file = path.join(__dirname, "../../", book.fileBook);
-  if (!checkAccess(file)) {
+  if (!uploadDirAccessor.checkAccess(file)) {
     return next();
   }
 
