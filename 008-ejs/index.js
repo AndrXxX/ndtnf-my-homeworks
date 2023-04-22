@@ -2,7 +2,7 @@ const express = require('express');
 const apiRouter = require('./routes/api');
 const indexRouter = require('./routes/index');
 // const booksRouter = require('./routes/books');
-const error404Middleware = require("./middleware/api404");
+const error404Middleware = require("./middleware/web404");
 const { port } = require('./config');
 const uploadDirAccessor = require('./utils/UploadDirAccessor');
 
