@@ -13,6 +13,7 @@ uploadDirAccessor.createBookUploadDir();
 app.use(express.json());
 app.use('/api', apiRouter);
 app.use('/', indexRouter);
+app.use(express.urlencoded());
 app.use('/books', booksRouter);
 app.use(error404Middleware);
 

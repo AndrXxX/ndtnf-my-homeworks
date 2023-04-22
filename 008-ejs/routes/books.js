@@ -1,11 +1,15 @@
 const express = require('express');
 const router = express.Router();
 // const error404Middleware = require("../middleware/web404");
-// const bookMulter = require('../middleware/bookMulter');
+const bookMulter = require('../middleware/bookMulter');
 const handlers = require('./handlers');
 
 router.get('/', handlers.books.fetchAll);
 router.get('/create', handlers.books.createForm);
+router.post('/create',
+  bookMulter.single('fileBook'),
+  handlers.books.create,
+);
 
 // router.get('/:id/download',
 //   handlers.books.download,
@@ -17,10 +21,7 @@ router.get('/create', handlers.books.createForm);
 //   error404Middleware,
 // );
 //
-// router.post('/',
-//   bookMulter.single('fileBook'),
-//   handlers.books.add,
-// );
+
 //
 // router.put('/:id',
 //   bookMulter.single('fileBook'),
