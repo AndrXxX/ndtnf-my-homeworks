@@ -1,5 +1,7 @@
 # Домашнее задание к занятию «2.3. EJS. Шаблонизаторы»
 
+ТЗ доступно по [ссылке](https://github.com/netology-code/ndse-homeworks/tree/master/008-ejs).
+
 <details>
 <summary>Включает в себя предыдущие задания</summary>
 
@@ -16,8 +18,6 @@
 </details>
 
 </details>
-
-ТЗ доступно по [ссылке](https://github.com/netology-code/ndse-homeworks/tree/master/008-ejs).
 
 Для установки зависимостей необходимо выполнить `npm i`.
 
