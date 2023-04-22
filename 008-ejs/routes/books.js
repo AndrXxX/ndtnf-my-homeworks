@@ -5,6 +5,7 @@ const router = express.Router();
 const handlers = require('./handlers');
 
 router.get('/', handlers.books.fetchAll);
+router.get('/create', handlers.books.createForm);
 
 // router.get('/:id/download',
 //   handlers.books.download,
