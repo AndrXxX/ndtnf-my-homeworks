@@ -1,4 +1,4 @@
-const booksStore = require("../../store/BookStore");
+const booksStore = require("../../../store/BookStore");
 
 module.exports = (req, res) => {
   const params = req.body;

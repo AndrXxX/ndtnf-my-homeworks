@@ -1,6 +1,6 @@
-const booksStore = require("../../store/BookStore");
+const booksStore = require("../../../store/BookStore");
 const path = require('path');
-const uploadDirAccessor = require('../../utils/UploadDirAccessor');
+const uploadDirAccessor = require('../../../utils/UploadDirAccessor');
 
 module.exports = (req, res, next) => {
   const book = booksStore.get(req.params.id);
