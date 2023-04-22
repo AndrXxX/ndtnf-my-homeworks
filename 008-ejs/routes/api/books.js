@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const error404Middleware = require("../../middleware/error404");
+const error404Middleware = require("../../middleware/api404");
 const bookMulter = require('../../middleware/bookMulter');
 const handlers = require('../../handlers/handlers');
 
