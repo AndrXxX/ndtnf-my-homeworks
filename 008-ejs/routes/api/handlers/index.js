@@ -1,10 +1,10 @@
 module.exports = {
   books: {
-    fetchAll: require('./FetchAllBooksHandler'),
-    fetchById: require('./FetchBookByIdHandler'),
-    add: require('./AddBookHandler'),
-    update: require('./UpdateBookHandler'),
-    delete: require('./DeleteBookHandler'),
-    download: require('./DownloadBookHandler'),
+    fetchAll: require('./BooksFetchAllHandler'),
+    fetchById: require('./BookFetchByIdHandler'),
+    create: require('./BookCreateHandler'),
+    update: require('./BookUpdateHandler'),
+    delete: require('./BookDeleteHandler'),
+    download: require('./BookDownloadHandler'),
   }
 };

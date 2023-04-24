@@ -18,7 +18,7 @@ router.get('/:id',
 
 router.post('/',
   bookMulter.single('fileBook'),
-  handlers.books.add,
+  handlers.books.create,
 );
 
 router.put('/:id',
