@@ -1,13 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const error404Middleware = require("../middleware/web404");
-const bookMulter = require('../middleware/bookMulter');
+const fileMiddleware = require("../middleware/file");
 const handlers = require('./handlers');
 
 router.get('/', handlers.books.fetchAll);
 router.get('/create', handlers.books.createForm);
 router.post('/create',
-  bookMulter.single('fileBook'),
+  fileMiddleware.fields([
+    {name: 'fileBook', maxCount: 1},
+    {name: 'fileCover', maxCount: 1}
+  ]),
   handlers.books.create,
 );
 
@@ -17,7 +20,10 @@ router.get('/:id',
 );
 
 router.get('/update/:id',
-  bookMulter.single('fileBook'),
+  fileMiddleware.fields([
+    {name: 'fileBook', maxCount: 1},
+    {name: 'fileCover', maxCount: 1}
+  ]),
   handlers.books.updateForm,
   error404Middleware,
 );
