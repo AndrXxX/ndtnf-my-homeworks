@@ -24,7 +24,7 @@ const createBookUploadDir = () => {
     if (checkAccess(path)) {
       return true;
     }
-    const createDirFunc = () => fs.mkdirSync(absolutePath, { recursive: true });
+    const createDirFunc = () => fs.mkdirSync(path, { recursive: true });
     return catchOnError(createDirFunc);
   });
 }
