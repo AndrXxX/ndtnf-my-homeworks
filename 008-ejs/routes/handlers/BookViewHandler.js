@@ -1,6 +1,6 @@
 const booksStore = require("../../store/BookStore");
 
-module.exports = (req, res) => {
+module.exports = (req, res, next) => {
   const book = booksStore.get(req.params.id);
   if (!book) {
     return next();
