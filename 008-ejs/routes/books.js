@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-// const error404Middleware = require("../middleware/web404");
+const error404Middleware = require("../middleware/web404");
 const bookMulter = require('../middleware/bookMulter');
 const handlers = require('./handlers');
 
@@ -11,10 +11,6 @@ router.post('/create',
   handlers.books.create,
 );
 
-// router.get('/:id/download',
-//   handlers.books.download,
-//   error404Middleware,
-// );
 //
 // router.get('/:id',
 //   handlers.books.fetchById,
@@ -28,10 +24,10 @@ router.post('/create',
 //   handlers.books.update,
 //   error404Middleware,
 // );
-//
-// router.delete('/:id',
-//   handlers.books.delete,
-//   error404Middleware,
-// );
+
+router.post('/delete/:id',
+  handlers.books.delete,
+  error404Middleware,
+);
 
 module.exports = router;

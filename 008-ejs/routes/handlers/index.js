@@ -5,7 +5,6 @@ module.exports = {
     create: require('./CreateBookHandler'),
     // fetchById: require('./FetchBookByIdHandler'),
     // update: require('./UpdateBookHandler'),
-    // delete: require('./DeleteBookHandler'),
-    // download: require('./DownloadBookHandler'),
+    delete: require('./DeleteBookHandler'),
   }
 };
