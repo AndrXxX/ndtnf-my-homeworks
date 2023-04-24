@@ -6,10 +6,9 @@ module.exports = (req, res, next) => {
     return next();
   }
   const params = req.body;
-  if (req.file) {
-    const { path } = req.file;
-    params.fileBook = path;
-  }
+  const files = req.files;
+  files.fileBook && (params.fileBook = files.fileBook[0].path);
+  files.fileCover && (params.fileCover = files.fileCover[0].path);
   book.fillByParams(params);
   return res.redirect(`/books/${book.id}`);
 };
