@@ -3,9 +3,9 @@ module.exports = {
     fetchAll: require('./FetchAllBooksHandler'),
     createForm: require('./BookCreateFormHandler'),
     create: require('./CreateBookHandler'),
-    // update: require('./UpdateBookHandler'),
     delete: require('./DeleteBookHandler'),
     view: require('./BookViewHandler'),
+    update: require('./UpdateBookHandler'),
     updateForm: require('./BookUpdateFormHandler'),
   }
 };

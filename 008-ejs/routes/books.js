@@ -22,11 +22,11 @@ router.get('/update/:id',
   error404Middleware,
 );
 
-// router.put('/:id',
-//   bookMulter.single('fileBook'),
-//   handlers.books.update,
-//   error404Middleware,
-// );
+router.post('/update/:id',
+  bookMulter.single('fileBook'),
+  handlers.books.update,
+  error404Middleware,
+);
 
 router.post('/delete/:id',
   handlers.books.delete,
