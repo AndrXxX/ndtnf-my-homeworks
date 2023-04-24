@@ -1,5 +1,5 @@
 const multer = require('multer');
-const { bookUploadPath, bookUploadImages } = require('../config');
+const { bookUploadPath, imagesUploadPath } = require('../config');
 const MAX_FILE_SIZE = 10*1024*1024;
 const allowedTypes = [
   'application/pdf',
@@ -17,7 +17,7 @@ const storage = multer.diskStorage({
     if (file.fieldname === "fileBook") {
       cb(null, bookUploadPath);
     } else {
-      cb(null, bookUploadImages);
+      cb(null, imagesUploadPath);
     }
   },
   filename(req, file, cb) {

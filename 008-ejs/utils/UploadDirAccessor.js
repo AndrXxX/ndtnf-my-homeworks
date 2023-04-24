@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const {bookUploadPath} = require("../config");
+const { bookUploadPath, imagesUploadPath } = require("../config");
 
 const catchOnError = (func) => {
   try {
@@ -16,12 +16,17 @@ const checkAccess = (file) => {
 }
 
 const createBookUploadDir = () => {
-  const absolutePath = path.join(__dirname, "../", bookUploadPath);
-  if (checkAccess(absolutePath)) {
-    return true;
-  }
-  const createDirFunc = () => fs.mkdirSync(absolutePath, { recursive: true });
-  return catchOnError(createDirFunc);
+  const paths = [
+    path.join(__dirname, "../", bookUploadPath),
+    path.join(__dirname, "../", imagesUploadPath),
+  ];
+  paths.forEach(function (path) {
+    if (checkAccess(path)) {
+      return true;
+    }
+    const createDirFunc = () => fs.mkdirSync(absolutePath, { recursive: true });
+    return catchOnError(createDirFunc);
+  });
 }
 
 module.exports = {
