@@ -24,12 +24,7 @@ router.get('/:id/download-cover',
   error404Middleware,
 );
 
-router.get('/:id',
-  handlers.books.view,
-  error404Middleware,
-);
-
-router.get('/update/:id',
+router.get('/:id/update',
   fileMiddleware.fields([
     {name: 'fileBook', maxCount: 1},
     {name: 'fileCover', maxCount: 1}
@@ -38,7 +33,7 @@ router.get('/update/:id',
   error404Middleware,
 );
 
-router.post('/update/:id',
+router.post('/:id/update',
   fileMiddleware.fields([
     {name: 'fileBook', maxCount: 1},
     {name: 'fileCover', maxCount: 1}
@@ -47,8 +42,13 @@ router.post('/update/:id',
   error404Middleware,
 );
 
-router.post('/delete/:id',
+router.post('/:id/delete',
   handlers.books.delete,
+  error404Middleware,
+);
+
+router.get('/:id',
+  handlers.books.view,
   error404Middleware,
 );
 
