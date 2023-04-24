@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
   if (!book || !book.fileBook) {
     return next();
   }
-  const file = path.join(__dirname, "../../", book.fileBook);
+  const file = path.join(__dirname, "../../../", book.fileBook);
   if (!uploadDirAccessor.checkAccess(file)) {
     return next();
   }

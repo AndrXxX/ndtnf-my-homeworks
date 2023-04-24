@@ -4,10 +4,10 @@ const uploadDirAccessor = require('../../../utils/UploadDirAccessor');
 
 module.exports = (req, res, next) => {
   const book = booksStore.get(req.params.id);
-  if (!book || !book.fileBook) {
+  if (!book || !book.fileCover) {
     return next();
   }
-  const file = path.join(__dirname, "../../", book.fileCover);
+  const file = path.join(__dirname, "../../../", book.fileCover);
   if (!uploadDirAccessor.checkAccess(file)) {
     return next();
   }
