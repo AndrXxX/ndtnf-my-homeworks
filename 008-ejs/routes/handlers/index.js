@@ -1,3 +1,5 @@
+const apiHandlers = require('../api/handlers');
+
 module.exports = {
   books: {
     fetchAll: require('./BooksFetchAllHandler'),
@@ -7,5 +9,7 @@ module.exports = {
     view: require('./BookViewHandler'),
     update: require('./BookUpdateHandler'),
     updateForm: require('./BookUpdateFormHandler'),
+    download: apiHandlers.books.download,
+    downloadCover: apiHandlers.books.downloadCover,
   }
 };

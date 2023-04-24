@@ -14,6 +14,16 @@ router.post('/create',
   handlers.books.create,
 );
 
+router.get('/:id/download-file',
+  handlers.books.download,
+  error404Middleware,
+);
+
+router.get('/:id/download-cover',
+  handlers.books.downloadCover,
+  error404Middleware,
+);
+
 router.get('/:id',
   handlers.books.view,
   error404Middleware,
