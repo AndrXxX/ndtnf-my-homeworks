@@ -16,6 +16,12 @@ router.get('/:id',
   error404Middleware,
 );
 
+router.get('/update/:id',
+  bookMulter.single('fileBook'),
+  handlers.books.updateForm,
+  error404Middleware,
+);
+
 // router.put('/:id',
 //   bookMulter.single('fileBook'),
 //   handlers.books.update,

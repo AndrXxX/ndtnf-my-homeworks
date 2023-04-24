@@ -6,5 +6,6 @@ module.exports = {
     // update: require('./UpdateBookHandler'),
     delete: require('./DeleteBookHandler'),
     view: require('./BookViewHandler'),
+    updateForm: require('./BookUpdateFormHandler'),
   }
 };
