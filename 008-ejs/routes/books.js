@@ -11,14 +11,11 @@ router.post('/create',
   handlers.books.create,
 );
 
-//
-// router.get('/:id',
-//   handlers.books.fetchById,
-//   error404Middleware,
-// );
-//
+router.get('/:id',
+  handlers.books.view,
+  error404Middleware,
+);
 
-//
 // router.put('/:id',
 //   bookMulter.single('fileBook'),
 //   handlers.books.update,
