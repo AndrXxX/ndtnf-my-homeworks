@@ -1,11 +1,11 @@
 module.exports = {
   books: {
-    fetchAll: require('./FetchAllBooksHandler'),
+    fetchAll: require('./BooksFetchAllHandler'),
     createForm: require('./BookCreateFormHandler'),
-    create: require('./CreateBookHandler'),
-    delete: require('./DeleteBookHandler'),
+    create: require('./BookCreateHandler'),
+    delete: require('./BookDeleteHandler'),
     view: require('./BookViewHandler'),
-    update: require('./UpdateBookHandler'),
+    update: require('./BookUpdateHandler'),
     updateForm: require('./BookUpdateFormHandler'),
   }
 };
