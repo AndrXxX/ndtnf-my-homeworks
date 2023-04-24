@@ -29,7 +29,10 @@ router.get('/update/:id',
 );
 
 router.post('/update/:id',
-  bookMulter.single('fileBook'),
+  fileMiddleware.fields([
+    {name: 'fileBook', maxCount: 1},
+    {name: 'fileCover', maxCount: 1}
+  ]),
   handlers.books.update,
   error404Middleware,
 );
