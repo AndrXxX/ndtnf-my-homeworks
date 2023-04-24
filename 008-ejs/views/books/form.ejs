@@ -5,6 +5,11 @@
     </div>
 
     <div class="form-group">
+        <label for="bookAuthors">Авторы</label>
+        <input type="text" value="<%= book.authors %>" name="authors" class="form-control" id="bookAuthors">
+    </div>
+
+    <div class="form-group">
         <label for="bookDescription">Описание</label>
         <textarea rows="3" name="description" class="form-control" id="bookDescription"><%= book.description %></textarea>
     </div>

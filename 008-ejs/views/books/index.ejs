@@ -11,7 +11,8 @@
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Заголовок</th>
+                <th scope="col">Авторы</th>
+                <th scope="col">Название</th>
                 <th scope="col"></th>
             </tr>
             </thead>
@@ -20,6 +21,7 @@
                 <% books.map((el, idx) => {  %>
                     <tr>
                         <th scope="row"><%= idx +1 %></th>
+                        <td><%= el.authors %></td>
                         <td><%= el.title %></td>
                         <td class="text-right">
                             <a class="btn btn-sm btn-success" href="/books/<%= el.id %>">
