@@ -1,0 +1,53 @@
+<%- include("../partials/layout-start", {title: title}) %>
+<%- include("../partials/menu") %>
+<h1><%= title %></h1>
+
+<div class="row">
+    <div class="col-sm-8">
+        <div class="card">
+            <h5 class="card-header"><%= book.title %></h5>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <p class="card-text" data-toggle="Описание">
+                            <i class="fa fa-align-left" aria-hidden="true"></i> <%= book.description %>
+                        </p>
+                        <p class="card-text" data-toggle="Авторы">
+                            <i class="fa fa-users" aria-hidden="true"></i> <%= book.authors %>
+                        </p>
+                        <div class="card-text">
+                            <% if (book.favorite) { %>
+                                <i class="fa fa-check-square-o" aria-hidden="true"></i> В избранном
+                            <% } else { %>
+                                <i class="fa fa-bookmark" aria-hidden="true"></i> Не в избранном
+                            <% } %>
+                        </div>
+                    </div>
+                    <% if (book.fileCover) { %>
+                        <div class="col-sm-4 text-right">
+                            <img class="card-img-top" src="/books/<%= book.id %>/download-cover" alt="Обложка книги">
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+            <div class="card-footer bg-transparent">
+<!--                <div class="float-right m-1"><i class="fa fa-eye" aria-hidden="true"></i> /<%= /*count*/ %></div>-->
+                <% if (book.fileBook) { %>
+                    <a class="btn btn-sm btn-primary" href="/books/<%= book.id %>/download-file">
+                        <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                    </a>
+                <% } %>
+                <a class="btn btn-sm btn-primary" href="/books/<%= book.id %>/update">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </a>
+                <form action="/books/<%= book.id %>/delete" method="POST" class="d-inline">
+                    <button class="btn btn-sm btn-danger">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include("../partials/layout-end") %>
