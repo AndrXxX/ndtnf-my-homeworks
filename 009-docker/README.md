@@ -1,6 +1,6 @@
 # Домашнее задание к занятию «2.4 Docker, установка и настройка»
 
-ТЗ доступно по [ссылке](https://github.com/netology-code/ndse-homeworks/tree/v2/009-docker).
+ТЗ доступно по [ссылке](https://github.com/netology-code/ndse-homeworks/tree/master/009-docker).
 
 Решения:
 * Задание 1 - [Docker CLI](1.DockerCLI.md)
