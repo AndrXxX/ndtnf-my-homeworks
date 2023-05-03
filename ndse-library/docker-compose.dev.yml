@@ -1,0 +1,12 @@
+services:
+
+  ndse_library:
+    image: node:18.16
+    volumes:
+      - ./library/app:/app
+    working_dir: /app
+    environment:
+      - PORT=3002
+    ports:
+      - 3002:3002
+    command: npm run dev
