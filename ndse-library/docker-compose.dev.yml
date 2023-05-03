@@ -1,5 +1,10 @@
 services:
 
+  storage:
+    image: redis
+    volumes:
+      - ./redis:/data
+
   ndse_library:
     image: node:18.16
     volumes:
