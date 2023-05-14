@@ -1,6 +1,9 @@
 const booksStore = require("../../store/BookStore");
+const countersFactory = require('../../utils/CountersAccessor');
 
-module.exports = (req, res, next) => {
+module.exports = async (req, res, next) => {
+  const counter = countersFactory.getAccessor();
+  await counter.incr(req.params.id);
   const book = booksStore.get(req.params.id);
   if (!book) {
     return next();
@@ -8,5 +11,6 @@ module.exports = (req, res, next) => {
   res.render("books/view", {
     title: "Книги | Просмотр",
     book,
+    count: await counter.get(req.params.id),
   });
 };
