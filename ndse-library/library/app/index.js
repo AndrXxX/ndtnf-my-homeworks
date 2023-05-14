@@ -2,8 +2,9 @@ const express = require('express');
 const apiRouter = require('./routes/api');
 const indexRouter = require('./routes/index');
 const booksRouter = require('./routes/books');
+const mongoose = require('mongoose');
 const error404Middleware = require("./middleware/web404");
-const { port } = require('./config');
+const { port, dbUrl } = require('./config');
 const uploadDirAccessor = require('./utils/UploadDirAccessor');
 
 const app = express();
@@ -17,4 +18,9 @@ app.use(express.urlencoded());
 app.use('/books', booksRouter);
 app.use(error404Middleware);
 
-app.listen(port);
+try {
+  mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true });
+  app.listen(port);
+} catch (e) {
+  console.error(e);
+}
