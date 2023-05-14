@@ -11,9 +11,9 @@ services:
       - ./library/app:/app
     working_dir: /app
     environment:
-      - PORT=3002
+      - PORT=80
     ports:
-      - 3002:3002
+      - 3002:80
     command: npm run dev
     depends_on:
       - ndse_counter
@@ -24,10 +24,10 @@ services:
       - ./counter/app:/app
     working_dir: /app
     environment:
-      - PORT=3003
+      - PORT=80
       - REDIS_URL=redis://redis-storage
     ports:
-      - 3003:3003
+      - 3003:80
     command: npm run dev
     depends_on:
       - redis-storage

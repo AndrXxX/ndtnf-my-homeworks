@@ -8,19 +8,19 @@ services:
   ndse_library:
     build: ./library
     environment:
-      - PORT=3002
+      - PORT=80
     ports:
-      - 3002:3002
+      - 3002:80
     depends_on:
       - ndse_counter
 
   ndse_counter:
     build: ./counter
     environment:
-      - PORT=3003
+      - PORT=80
       - REDIS_URL=redis://redis-storage
     ports:
-      - 3003:3003
+      - 3003:80
     depends_on:
       - redis-storage
 
