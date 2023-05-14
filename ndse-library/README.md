@@ -40,3 +40,5 @@
 
 3. Из готовых образов на hub.docker.com:
    * `docker compose -f docker-compose.prod.yml up`
+
+Приложение будет доступно по адресу [http://localhost:3002/](http://localhost:3002/).
