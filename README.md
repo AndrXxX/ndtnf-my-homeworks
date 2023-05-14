@@ -7,3 +7,4 @@
 ## [2.2. Middleware. Паттерн "цепочка обязанностей"](ndse-library)
 ## [2.3. EJS. Шаблонизаторы](ndse-library)
 ## [2.4 Docker, установка и настройка](009-docker)
+## [2.5. Docker: контейнеризация приложения](ndse-library)
