@@ -8,7 +8,7 @@ router.get('/', handlers.books.fetchAll);
 router.get('/create', handlers.books.createForm);
 router.post('/create',
   fileMiddleware.fields([
-    {name: 'fileBook', maxCount: 1},
+    {name: 'fileName', maxCount: 1},
     {name: 'fileCover', maxCount: 1}
   ]),
   handlers.books.create,
@@ -26,7 +26,7 @@ router.get('/:id/download-cover',
 
 router.get('/:id/update',
   fileMiddleware.fields([
-    {name: 'fileBook', maxCount: 1},
+    {name: 'fileName', maxCount: 1},
     {name: 'fileCover', maxCount: 1}
   ]),
   handlers.books.updateForm,
@@ -35,7 +35,7 @@ router.get('/:id/update',
 
 router.post('/:id/update',
   fileMiddleware.fields([
-    {name: 'fileBook', maxCount: 1},
+    {name: 'fileName', maxCount: 1},
     {name: 'fileCover', maxCount: 1}
   ]),
   handlers.books.update,

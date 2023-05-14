@@ -25,10 +25,6 @@ const bookSchema = new Schema({
     type: String,
     default: "",
   },
-  fileBook: {
-    type: String,
-    default: "",
-  },
 });
 
 module.exports = model('Book', bookSchema);

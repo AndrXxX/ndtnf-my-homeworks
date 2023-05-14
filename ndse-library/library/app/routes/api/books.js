@@ -18,7 +18,7 @@ router.get('/:id',
 
 router.post('/',
   fileMiddleware.fields([
-    {name: 'fileBook', maxCount: 1},
+    {name: 'fileName', maxCount: 1},
     {name: 'fileCover', maxCount: 1}
   ]),
   handlers.books.create,
@@ -26,7 +26,7 @@ router.post('/',
 
 router.put('/:id',
   fileMiddleware.fields([
-    {name: 'fileBook', maxCount: 1},
+    {name: 'fileName', maxCount: 1},
     {name: 'fileCover', maxCount: 1}
   ]),
   handlers.books.update,
