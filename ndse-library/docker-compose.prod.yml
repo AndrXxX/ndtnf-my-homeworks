@@ -9,7 +9,7 @@ services:
     image: andrew1gar/ndse-library
     environment:
       - PORT=80
-      - COUNTER_URL=ndse_counter
+      - COUNTER_URL=http://ndse_counter
     ports:
       - 3002:80
     depends_on:

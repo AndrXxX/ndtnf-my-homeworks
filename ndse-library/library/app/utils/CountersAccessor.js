@@ -1,8 +1,7 @@
 const axios = require('axios');
 const { counterUrl } = require("../config");
-const PROTOCOL = 'http';
-const getUrl = (serviceUrl, bookId) => `${PROTOCOL}://${serviceUrl}/counter/${bookId}`;
-const incrUrl = (serviceUrl, bookId) => `${getUrl(serviceUrl, bookId)}/incr`;
+const getUrl = (bookId) => `${counterUrl}/counter/${bookId}`;
+const incrUrl = (bookId) => `${getUrl(bookId)}/incr`;
 
 async function getResult(url, method) {
   try {
@@ -15,17 +14,14 @@ async function getResult(url, method) {
 }
 
 class CountersAccessor {
-  constructor(serviceUrl) {
-    this.url = serviceUrl;
-  }
   async get(bookId) {
-    return await getResult(getUrl(this.url, bookId), 'get');
+    return await getResult(getUrl(bookId), 'get');
   }
   async incr(bookId) {
-    return await getResult(incrUrl(this.url, bookId), 'post');
+    return await getResult(incrUrl(bookId), 'post');
   }
 }
 
 module.exports = {
-  getAccessor: () => new CountersAccessor(counterUrl),
+  getAccessor: () => new CountersAccessor(),
 };

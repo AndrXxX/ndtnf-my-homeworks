@@ -12,7 +12,7 @@ services:
     working_dir: /app
     environment:
       - PORT=80
-      - COUNTER_URL=ndse_counter
+      - COUNTER_URL=http://ndse_counter
     ports:
       - 3002:80
     command: npm run dev
