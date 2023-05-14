@@ -1,14 +1,13 @@
-const booksStore = require("../../store/BookStore");
+const booksStore = require("../../store/BooksStore");
 
-module.exports = (req, res, next) => {
-  const book = booksStore.get(req.params.id);
-  if (!book) {
+module.exports = async (req, res, next) => {
+  if (!await booksStore.hasBook(req.params.id)) {
     return next();
   }
   const params = req.body;
   const files = req.files;
   files.fileBook && (params.fileBook = files.fileBook[0].path);
   files.fileCover && (params.fileCover = files.fileCover[0].path);
-  book.fillByParams(params);
-  return res.redirect(`/books/${book.id}`);
+  await booksStore.update(req.params.id, params);
+  return res.redirect(`/books/${req.params.id}`);
 };

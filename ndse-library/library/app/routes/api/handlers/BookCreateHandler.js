@@ -1,11 +1,11 @@
-const booksStore = require("../../../store/BookStore");
+const booksStore = require("../../../store/BooksStore");
 
-module.exports = (req, res) => {
+module.exports = async (req, res) => {
   const params = req.body;
-  const files = req.files;
+  const files = req.files || {};
   files.fileBook && (params.fileBook = files.fileBook[0].path);
   files.fileCover && (params.fileCover = files.fileCover[0].path);
-  const book = booksStore.add(params);
+  const book = await booksStore.create(params);
   res.code = 201;
-  res.json(book);
+  res.redirect(`/api/books/${book._id}`);
 };

@@ -1,5 +1,5 @@
-const booksStore = require("../../../store/BookStore");
+const booksStore = require("../../../store/BooksStore");
 
-module.exports = (req, res) => {
-  res.json(booksStore.getAll());
+module.exports = async (req, res) => {
+  res.json(await booksStore.getAll());
 };

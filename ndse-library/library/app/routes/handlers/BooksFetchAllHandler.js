@@ -1,8 +1,8 @@
-const booksStore = require("../../store/BookStore");
+const booksStore = require("../../store/BooksStore");
 
-module.exports = (req, res) => {
+module.exports = async (req, res) => {
   res.render("books/index", {
     title: "Список книг",
-    books: booksStore.getAll(),
+    books: await booksStore.getAll(),
   });
 };

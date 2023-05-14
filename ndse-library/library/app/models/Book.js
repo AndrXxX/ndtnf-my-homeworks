@@ -1,25 +1,34 @@
-const {v4: uuid} = require("uuid");
+const { Schema, model } = require('mongoose');
 
-class Book {
-  constructor(id = uuid()) {
-    this.id = id;
-    this.title = '';
-    this.description = '';
-    this.authors = '';
-    this.favorite = '';
-    this.fileCover = '';
-    this.fileName = '';
-    this.fileBook = '';
-  }
-  fillByParams(params = {}) {
-    const skipKeys = ['id'];
-    for (const key in this) {
-      if (skipKeys.includes(key) || !this.hasOwnProperty(key) || !params[key]) {
-        continue;
-      }
-      this[key] = params[key];
-    }
-  }
-}
+const bookSchema = new Schema({
+  title: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    default: "",
+  },
+  authors: {
+    type: String,
+    default: "",
+  },
+  favorite: {
+    type: String,
+    default: "",
+  },
+  fileCover: {
+    type: String,
+    default: "",
+  },
+  fileName: {
+    type: String,
+    default: "",
+  },
+  fileBook: {
+    type: String,
+    default: "",
+  },
+});
 
-module.exports = Book;
+module.exports = model('Book', bookSchema);
