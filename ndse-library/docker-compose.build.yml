@@ -1,0 +1,27 @@
+services:
+
+  redis-storage:
+    image: redis
+    volumes:
+      - ./redis:/data
+
+  ndse_library:
+    build: ./library
+    environment:
+      - PORT=80
+      - COUNTER_URL=http://ndse_counter
+    ports:
+      - 3002:80
+    depends_on:
+      - ndse_counter
+
+  ndse_counter:
+    build: ./counter
+    environment:
+      - PORT=80
+      - REDIS_URL=redis://redis-storage
+    ports:
+      - 3003:80
+    depends_on:
+      - redis-storage
+
