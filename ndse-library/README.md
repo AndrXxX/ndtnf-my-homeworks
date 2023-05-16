@@ -1,6 +1,6 @@
-# Домашнее задание к занятию «2.5. Docker: контейнеризация приложения»
+# Домашнее задание к занятию «2.7. Подключение MongoDB в Node.js приложение»
 
-ТЗ доступно по [ссылке](https://github.com/netology-code/ndse-homeworks/tree/master/009-docker-2).
+ТЗ доступно по [ссылке](https://github.com/netology-code/ndse-homeworks/tree/master/011-mongo).
 
 <details>
 <summary>Включает в себя предыдущие задания</summary>
@@ -23,6 +23,12 @@
 ТЗ доступно по [ссылке](https://github.com/netology-code/ndse-homeworks/tree/master/008-ejs).
 </details>
 
+<details>
+<summary>Домашнее задание к занятию «2.5. Docker: контейнеризация приложения»</summary>
+
+ТЗ доступно по [ссылке](https://github.com/netology-code/ndse-homeworks/tree/master/009-docker-2).
+</details>
+
 </details>
 
 Использование:
@@ -34,3 +40,5 @@
 
 3. Из готовых образов на hub.docker.com:
    * `docker compose -f docker-compose.prod.yml up`
+
+Приложение будет доступно по адресу [http://localhost:3002/](http://localhost:3002/).

@@ -1,10 +1,10 @@
-const booksStore = require("../../store/BookStore");
+const booksStore = require("../../store/BooksStore");
 const countersFactory = require('../../utils/CountersAccessor');
 
 module.exports = async (req, res, next) => {
   const counter = countersFactory.getAccessor();
   await counter.incr(req.params.id);
-  const book = booksStore.get(req.params.id);
+  const book = await booksStore.getById(req.params.id);
   if (!book) {
     return next();
   }

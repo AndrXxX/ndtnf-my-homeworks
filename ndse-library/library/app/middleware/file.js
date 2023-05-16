@@ -14,7 +14,7 @@ const allowedTypes = [
 
 const storage = multer.diskStorage({
   destination(req, file, cb) {
-    if (file.fieldname === "fileBook") {
+    if (file.fieldname === "fileName") {
       cb(null, bookUploadPath);
     } else {
       cb(null, imagesUploadPath);
