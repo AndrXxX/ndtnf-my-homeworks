@@ -34,6 +34,7 @@ services:
     environment:
       - PORT=80
       - COUNTER_URL=http://ndse_counter
+      - DB_URL=mongodb://${DB_USERNAME:-root}:${DB_PASSWORD:-password}@mongodb:27017/
     ports:
       - 3002:80
     depends_on:
