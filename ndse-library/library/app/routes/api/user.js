@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require( 'passport');
 const handlers = require('./handlers');
-const signupMiddleware = require('../../middleware/apiSignup');
+const signupMiddleware = require('../../middleware/signup');
 const authMiddleware = require('../../middleware/apiAuth');
 
 router.post('/login',
