@@ -8,6 +8,7 @@ const booksRouter = require('./routes/books');
 const userRouter = require('./routes/user');
 
 const mongoose = require('mongoose');
+const authMiddleware = require("./middleware/auth");
 const error404Middleware = require("./middleware/web404");
 const { cookieSecret, port, dbUrl } = require('./config');
 const uploadDirAccessor = require('./utils/UploadDirAccessor');
@@ -29,11 +30,12 @@ app.set("view engine", "ejs");
 uploadDirAccessor.createBookUploadDir();
 
 app.use(express.json());
-app.use('/api', apiRouter);
-app.use('/', indexRouter);
 app.use(express.urlencoded());
-app.use('/books', booksRouter);
+app.use('/api', apiRouter);
 app.use('/user', userRouter);
+app.use(authMiddleware);
+app.use('/', indexRouter);
+app.use('/books', booksRouter);
 app.use(error404Middleware);
 
 try {
