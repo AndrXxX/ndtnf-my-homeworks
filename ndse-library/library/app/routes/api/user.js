@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const passport = require( 'passport');
+const handlers = require('./handlers');
 
-router.post('/login', (req, res) => {
-  res.code = 201;
-  res.json({ id: 1, mail: "test@mail.ru" });
-});
+router.post('/login',
+  passport.authenticate('local'),
+  handlers.user.login,
+);
 
 module.exports = router;
