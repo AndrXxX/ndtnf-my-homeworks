@@ -11,5 +11,9 @@ module.exports = {
     updateForm: require('./BookUpdateFormHandler'),
     download: apiHandlers.books.download,
     downloadCover: apiHandlers.books.downloadCover,
-  }
+  },
+  user: {
+    login: require('./UserLoginHandler'),
+    loginForm: require('./UserLoginFormHandler'),
+  },
 };

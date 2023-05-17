@@ -2,6 +2,7 @@ const express = require('express');
 const apiRouter = require('./routes/api');
 const indexRouter = require('./routes/index');
 const booksRouter = require('./routes/books');
+const userRouter = require('./routes/user');
 const mongoose = require('mongoose');
 const error404Middleware = require("./middleware/web404");
 const { port, dbUrl } = require('./config');
@@ -18,6 +19,7 @@ app.use('/api', apiRouter);
 app.use('/', indexRouter);
 app.use(express.urlencoded());
 app.use('/books', booksRouter);
+app.use('/user', userRouter);
 app.use(error404Middleware);
 
 try {
