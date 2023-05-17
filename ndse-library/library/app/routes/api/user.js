@@ -15,7 +15,7 @@ router.post('/signup',
   handlers.user.signup,
 );
 
-router.get('/logout',
+router.post('/logout',
   handlers.user.logout,
 );
 
