@@ -20,4 +20,8 @@ router.post('/signup',
   handlers.user.signup,
 );
 
+router.get('/logout',
+  handlers.user.logout,
+);
+
 module.exports = router;
