@@ -1,6 +1,6 @@
-# Домашнее задание к занятию «2.7. Подключение MongoDB в Node.js приложение»
+# Домашнее задание к занятию «2.8 Аутентификация. Passport.js»
 
-ТЗ доступно по [ссылке](https://github.com/netology-code/ndse-homeworks/tree/master/011-mongo).
+ТЗ доступно по [ссылке](https://github.com/netology-code/ndse-homeworks/tree/master/012-auth).
 
 <details>
 <summary>Включает в себя предыдущие задания</summary>
@@ -27,6 +27,12 @@
 <summary>Домашнее задание к занятию «2.5. Docker: контейнеризация приложения»</summary>
 
 ТЗ доступно по [ссылке](https://github.com/netology-code/ndse-homeworks/tree/master/009-docker-2).
+</details>
+
+<details>
+<summary>Домашнее задание к занятию «2.7. Подключение MongoDB в Node.js приложение»</summary>
+
+ТЗ доступно по [ссылке](https://github.com/netology-code/ndse-homeworks/tree/master/011-mongo).
 </details>
 
 </details>
