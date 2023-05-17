@@ -1,0 +1,26 @@
+<%- include("../partials/layout-start", {title: title}) %>
+<div class="m-5 d-flex justify-content-center">
+    <form method="POST" class="p-3 border border-primary">
+        <% if (info) { %><div class="alert alert-success" role="alert"><%= info %></div><% } %>
+        <% if (error) { %><div class="alert alert-danger" role="alert"><%= error %></div><% } %>
+        <div class="form-group">
+            <label for="username">Логин</label>
+            <input type="text" class="form-control" id="username" name="user[username]" value="<%= user.username %>" placeholder="Введите логин">
+        </div>
+        <div class="form-group">
+            <label for="email">Электронная почта</label>
+            <input type="email" class="form-control" id="email" name="user[email]" value="<%= user.email %>" placeholder="example@mail.ru">
+        </div>
+        <div class="form-group">
+            <label for="password">Пароль</label>
+            <input type="password" class="form-control" id="password" name="user[password]" placeholder="Пароль">
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+            <button type="submit" class="btn btn-primary m-2">Зарегистрироваться</button>
+            <a href="/user/login" class="badge badge-info m-2">Войти</a>
+        </div>
+    </form>
+</div>
+
+
+<%- include("../partials/layout-end") %>
