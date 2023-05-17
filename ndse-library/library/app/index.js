@@ -6,8 +6,10 @@ const mongoose = require('mongoose');
 const error404Middleware = require("./middleware/web404");
 const { port, dbUrl } = require('./config');
 const uploadDirAccessor = require('./utils/UploadDirAccessor');
+const auth = require('./boot/auth');
 
 const app = express();
+auth();
 app.set("view engine", "ejs");
 uploadDirAccessor.createBookUploadDir();
 
