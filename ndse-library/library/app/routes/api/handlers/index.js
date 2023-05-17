@@ -11,5 +11,6 @@ module.exports = {
   user: {
     login: require('./UserLoginHandler'),
     signup: require('./UserSignupHandler'),
+    logout: require('./UserLogoutHandler'),
   },
 };
