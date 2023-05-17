@@ -18,5 +18,6 @@ module.exports = {
     signupForm: require('./UserSignupFormHandler'),
     signup: require('./UserSignupHandler'),
     logout: require('./UserLogoutHandler'),
+    info: require('./UserProfileHandler'),
   },
 };
