@@ -12,5 +12,6 @@ module.exports = async (req, res, next) => {
     title: "Книги | Просмотр",
     book,
     count: await counter.get(req.params.id),
+    username: req.user.username,
   });
 };
