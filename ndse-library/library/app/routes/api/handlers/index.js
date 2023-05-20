@@ -7,5 +7,11 @@ module.exports = {
     delete: require('./BookDeleteHandler'),
     download: require('./BookDownloadHandler'),
     downloadCover: require('./BookCoverDownloadHandler'),
-  }
+  },
+  user: {
+    login: require('./UserLoginHandler'),
+    signup: require('./UserSignupHandler'),
+    logout: require('./UserLogoutHandler'),
+    info: require('./UserLogoutHandler'),
+  },
 };

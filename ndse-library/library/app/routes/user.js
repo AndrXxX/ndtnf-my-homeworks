@@ -1,13 +1,19 @@
 const express = require('express');
-const router = express.Router();
-const passport = require( 'passport');
 const handlers = require('./handlers');
-const signupMiddleware = require('../../middleware/signup');
-const authMiddleware = require('../../middleware/apiAuth');
+const router = express.Router();
+const authMiddleware = require('../middleware/auth');
+const signupMiddleware = require('../middleware/signup');
+
+router.get('/login',
+  handlers.user.loginForm,
+);
 
 router.post('/login',
-  passport.authenticate('local'),
   handlers.user.login,
+);
+
+router.get('/signup',
+  handlers.user.signupForm,
 );
 
 router.post('/signup',
@@ -15,7 +21,7 @@ router.post('/signup',
   handlers.user.signup,
 );
 
-router.post('/logout',
+router.get('/logout',
   handlers.user.logout,
 );
 

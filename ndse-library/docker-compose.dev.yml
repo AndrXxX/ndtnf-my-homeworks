@@ -38,6 +38,7 @@ services:
       - PORT=80
       - COUNTER_URL=http://ndse_counter
       - DB_URL=mongodb://${DB_USERNAME:-root}:${DB_PASSWORD:-password}@mongodb:27017/
+      - COOKIE_SECRET=${COOKIE_SECRET:-COOKIE_SECRET}
     ports:
       - 3002:80
     command: npm run dev
