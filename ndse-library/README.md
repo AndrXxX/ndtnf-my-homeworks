@@ -1,6 +1,6 @@
-# Домашнее задание к занятию «2.8 Аутентификация. Passport.js»
+# Домашнее задание к занятию «2.9. Realtime-взаимодействие с сервером, протокол websocket»
 
-ТЗ доступно по [ссылке](https://github.com/netology-code/ndse-homeworks/tree/master/012-auth).
+ТЗ доступно по [ссылке](https://github.com/netology-code/ndse-homeworks/tree/master/013-websocket).
 
 <details>
 <summary>Включает в себя предыдущие задания</summary>
@@ -33,6 +33,12 @@
 <summary>Домашнее задание к занятию «2.7. Подключение MongoDB в Node.js приложение»</summary>
 
 ТЗ доступно по [ссылке](https://github.com/netology-code/ndse-homeworks/tree/master/011-mongo).
+</details>
+
+<details>
+<summary>Домашнее задание к занятию «2.8 Аутентификация. Passport.js»</summary>
+
+ТЗ доступно по [ссылке](https://github.com/netology-code/ndse-homeworks/tree/master/012-auth).
 </details>
 
 </details>

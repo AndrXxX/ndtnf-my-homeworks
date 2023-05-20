@@ -11,3 +11,4 @@
 ## [2.6. База данных и хранение данных](010-db)
 ## [2.7. Подключение MongoDB в Node.js приложение](ndse-library)
 ## [2.8 Аутентификация. Passport.js](ndse-library)
+## [2.9. Realtime-взаимодействие с сервером, протокол websocket](ndse-library)
