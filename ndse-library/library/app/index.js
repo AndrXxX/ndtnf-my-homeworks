@@ -1,6 +1,7 @@
 const express = require('express');
 const expressSession = require('express-session');
 const passport = require('passport');
+const { Server } = require("socket.io");
 
 const apiRouter = require('./routes/api');
 const indexRouter = require('./routes/index');
@@ -13,6 +14,7 @@ const error404Middleware = require("./middleware/web404");
 const { cookieSecret, port, dbUrl } = require('./config');
 const uploadDirAccessor = require('./utils/UploadDirAccessor');
 const auth = require('./boot/auth');
+const bootSocket = require('./boot/socket');
 
 const app = express();
 auth();
@@ -40,7 +42,8 @@ app.use(error404Middleware);
 
 try {
   mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true });
-  app.listen(port);
+  const server = app.listen(port);
+  bootSocket(new Server(server));
 } catch (e) {
   console.error(e);
 }
