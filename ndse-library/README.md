@@ -5,6 +5,10 @@
 <details>
 <summary>Включает в себя предыдущие задания</summary>
 
+
+### NDSE - Настройка окружения Node.js и библиотека Express.js
+
+#### Блок 2: Библиотека Express.js
 <details>
 <summary>Домашнее задание к занятию «2.1. Express»</summary>
 
