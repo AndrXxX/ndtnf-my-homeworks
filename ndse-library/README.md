@@ -1,6 +1,10 @@
-# Домашнее задание к занятию «2.9. Realtime-взаимодействие с сервером, протокол websocket»
+# Домашние задания по курсу «NDTNF - TypeScript, Nest.js, Firebase»
 
-ТЗ доступно по [ссылке](https://github.com/netology-code/ndse-homeworks/tree/master/013-websocket).
+## Блок 1: TypeScript
+
+Домашнее задание к занятию «1.2 Система типов TypeScript. ООП. SOLID»
+
+ТЗ доступно по [ссылке](https://github.com/netology-code/ndtnf-homeworks/blob/master/002-TypeScript).
 
 <details>
 <summary>Включает в себя предыдущие задания</summary>
@@ -41,6 +45,12 @@
 ТЗ доступно по [ссылке](https://github.com/netology-code/ndse-homeworks/tree/master/012-auth).
 </details>
 
+<details>
+<summary>Домашнее задание к занятию «2.9. Realtime-взаимодействие с сервером, протокол websocket»</summary>
+
+ТЗ доступно по [ссылке](https://github.com/netology-code/ndse-homeworks/tree/master/013-websocket).
+</details>
+
 </details>
 
 Использование:
@@ -54,3 +64,8 @@
    * `docker compose -f docker-compose.prod.yml up`
 
 Приложение будет доступно по адресу [http://localhost:3002/](http://localhost:3002/).
+
+Ссылки на файлы для быстрого перехода:
+* [library/app/models/Book.ts](library/app/models/Book.ts)
+* [library/app/store/BooksRepository.ts](library/app/store/BooksRepository.ts)
+* [library/app/tsconfig.json](library/app/tsconfig.json)
