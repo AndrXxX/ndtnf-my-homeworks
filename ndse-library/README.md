@@ -1,8 +1,4 @@
-# Домашние задания по курсу «NDTNF - TypeScript, Nest.js, Firebase»
-
-## Блок 1: TypeScript
-
-Домашнее задание к занятию «1.2 Система типов TypeScript. ООП. SOLID»
+## Домашнее задание к занятию «1.2 Система типов TypeScript. ООП. SOLID»
 
 ТЗ доступно по [ссылке](https://github.com/netology-code/ndtnf-homeworks/blob/master/002-TypeScript).
 
