@@ -1,6 +1,6 @@
 import { BookModel, Book } from "models/Book";
 
-export class BooksRepository {
+export class BooksStore {
   async createBook(book: Book): Promise<Book> {
     const bookModel = new BookModel(book);
     try {
@@ -49,4 +49,4 @@ export class BooksRepository {
   }
 }
 
-export const booksRepository = new BooksRepository();
+export const booksStore = new BooksStore();
