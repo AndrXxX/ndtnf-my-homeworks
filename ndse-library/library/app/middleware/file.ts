@@ -1,5 +1,7 @@
-const multer = require('multer');
-const { bookUploadPath, imagesUploadPath } = require('../config');
+import { Request } from "express";
+import multer from "multer";
+import config from "../config";
+
 const MAX_FILE_SIZE = 10*1024*1024;
 const allowedTypes = [
   'application/pdf',
@@ -15,9 +17,9 @@ const allowedTypes = [
 const storage = multer.diskStorage({
   destination(req, file, cb) {
     if (file.fieldname === "fileName") {
-      cb(null, bookUploadPath);
+      cb(null, config.bookUploadPath);
     } else {
-      cb(null, imagesUploadPath);
+      cb(null, config.imagesUploadPath);
     }
   },
   filename(req, file, cb) {
@@ -25,7 +27,7 @@ const storage = multer.diskStorage({
   }
 });
 
-const fileFilter = (req, file, cb) => {
+const fileFilter = (req: Request, file: Express.Multer.File, cb: (err: Error, passed: boolean) => void) => {
   if (!allowedTypes.includes(file.mimetype)) {
     return cb(null, false);
   }
@@ -35,7 +37,7 @@ const fileFilter = (req, file, cb) => {
   return cb(null, true);
 };
 
-module.exports = multer({
+export default multer({
   storage,
   fileFilter
 });
