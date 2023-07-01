@@ -1,7 +1,7 @@
 import { User, UserModel } from "models/User";
 import generator from "utils/HashGenerator";
 
-class UserStore {
+class UsersStore {
   async getUser(filter: User) {
     if (filter.id) {
       return UserModel.findById(filter.id).select('-__v');
@@ -16,4 +16,4 @@ class UserStore {
   }
 }
 
-export const userStore = new UserStore();
+export const usersStore = new UsersStore();
