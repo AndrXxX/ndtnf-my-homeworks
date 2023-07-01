@@ -1,8 +1,8 @@
-const fs = require("fs");
-const path = require("path");
-const { bookUploadPath, imagesUploadPath } = require("../config");
+import fs from "fs";
+import path from "path";
+import config from "../config";
 
-const catchOnError = (func) => {
+const catchOnError = (func: () => void) => {
   try {
     func();
     return true;
@@ -11,14 +11,14 @@ const catchOnError = (func) => {
   }
 }
 
-const checkAccess = (file) => {
-  return catchOnError(() => fs.accessSync(file, fs.constants.R_OK | fs.constants.W_OK));
+const checkAccess = (path: string) => {
+  return catchOnError(() => fs.accessSync(path, fs.constants.R_OK | fs.constants.W_OK));
 }
 
 const createBookUploadDir = () => {
   const paths = [
-    path.join(__dirname, "../", bookUploadPath),
-    path.join(__dirname, "../", imagesUploadPath),
+    path.join(__dirname, "../", config.bookUploadPath),
+    path.join(__dirname, "../", config.imagesUploadPath),
   ];
   paths.forEach(function (path) {
     if (checkAccess(path)) {
