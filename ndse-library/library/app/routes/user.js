@@ -2,7 +2,6 @@ const express = require('express');
 const handlers = require('./handlers');
 const router = express.Router();
 const authMiddleware = require('../middleware/auth');
-const signupMiddleware = require('../middleware/signup');
 
 router.get('/login',
   handlers.user.loginForm,
@@ -17,7 +16,6 @@ router.get('/signup',
 );
 
 router.post('/signup',
-  signupMiddleware,
   handlers.user.signup,
 );
 
