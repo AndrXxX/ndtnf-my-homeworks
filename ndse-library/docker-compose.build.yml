@@ -34,7 +34,7 @@ services:
     build: ./library
     environment:
       - PORT=80
-      - COUNTER_URL=http://ndse_counter
+      - COUNTER_URL=ndse_counter
       - DB_URL=mongodb://${DB_USERNAME:-root}:${DB_PASSWORD:-password}@mongodb:${MONGODB_PORT:-27017}/${DB_NAME:-library}
       - COOKIE_SECRET=${COOKIE_SECRET:-COOKIE_SECRET}
     ports:
