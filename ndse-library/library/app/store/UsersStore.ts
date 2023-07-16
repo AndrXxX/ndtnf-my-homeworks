@@ -1,8 +1,12 @@
 import { User, UserModel } from "models/User";
 import generator from "utils/HashGenerator";
 
+interface iUserFilter {
+  [propertyName: string]: string | number
+}
+
 class UsersStore {
-  async getUser(filter: User) {
+  async getUser(filter: iUserFilter) {
     if (filter.id) {
       return UserModel.findById(filter.id).select('-__v');
     }
