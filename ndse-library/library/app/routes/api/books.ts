@@ -1,18 +1,23 @@
 import express from "express";
 import error404Middleware from "middleware/api404";
 import fileMiddleware from "../../middleware/file";
-import handlers from "./handlers";
+import bookCreateHandler from "./handlers/BookCreateHandler";
+import bookDeleteHandler from "./handlers/BookDeleteHandler";
+import bookDownloadHandler from "./handlers/BookDownloadHandler";
+import bookFetchByIdHandler from "./handlers/BookFetchByIdHandler";
+import booksFetchAllHandler from "./handlers/BooksFetchAllHandler";
+import bookUpdateHandler from "./handlers/BookUpdateHandler";
 
 const router = express.Router();
-router.get('/', handlers.books.fetchAll);
+router.get('/', booksFetchAllHandler);
 
 router.get('/:id/download',
-  handlers.books.download,
+  bookDownloadHandler,
   error404Middleware,
 );
 
 router.get('/:id',
-  handlers.books.fetchById,
+  bookFetchByIdHandler,
   error404Middleware,
 );
 
@@ -21,7 +26,7 @@ router.post('/',
     {name: 'fileName', maxCount: 1},
     {name: 'fileCover', maxCount: 1}
   ]),
-  handlers.books.create,
+  bookCreateHandler,
 );
 
 router.put('/:id',
@@ -29,12 +34,12 @@ router.put('/:id',
     {name: 'fileName', maxCount: 1},
     {name: 'fileCover', maxCount: 1}
   ]),
-  handlers.books.update,
+  bookUpdateHandler,
   error404Middleware,
 );
 
 router.delete('/:id',
-  handlers.books.delete,
+  bookDeleteHandler,
   error404Middleware,
 );
 
