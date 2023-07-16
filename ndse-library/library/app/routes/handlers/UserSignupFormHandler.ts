@@ -1,4 +1,6 @@
-module.exports = async (req, res) => {
+import { Request, Response } from "express";
+
+export default async (req: Request, res: Response) => {
   if (req.user) {
     res.redirect('/');
   }
