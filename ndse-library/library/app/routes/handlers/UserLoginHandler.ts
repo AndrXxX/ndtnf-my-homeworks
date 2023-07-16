@@ -1,7 +1,9 @@
-const passport = require( 'passport');
+import { User } from "models/User";
+import passport from "passport";
+import { NextFunction, Request, Response } from "express";
 
-module.exports = async (req, res, next) => {
-  passport.authenticate('local', function (err, user) {
+export default async (req: Request, res: Response, next: NextFunction) => {
+  passport.authenticate('local', function (err: unknown, user: User) {
     if (err || !user) {
       return res.render('user/login', {
         title: "Авторизация",
