@@ -1,4 +1,4 @@
-import { FilesList } from "/intefaces/FilesList";
+import { FilesList } from "/interfaces/FilesList";
 import { booksStore } from "/store/BooksStore";
 import { Request, Response } from "express";
 
