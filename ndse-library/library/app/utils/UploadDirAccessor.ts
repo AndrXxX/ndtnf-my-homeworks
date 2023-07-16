@@ -29,7 +29,7 @@ const createBookUploadDir = () => {
   });
 }
 
-module.exports = {
+export default {
   checkAccess: checkAccess,
   createBookUploadDir: createBookUploadDir,
 }
