@@ -1,6 +1,6 @@
-import { User } from "../../models/User";
 import { NextFunction, Request, Response } from "express";
 import passport from "passport";
+import { User } from "../../modules/users/user";
 
 export default async (req: Request, res: Response, next: NextFunction) => {
   passport.authenticate('local', function (err: unknown, user: User) {

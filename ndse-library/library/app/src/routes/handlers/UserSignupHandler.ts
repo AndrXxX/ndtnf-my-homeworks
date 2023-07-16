@@ -1,8 +1,10 @@
-import { usersStore } from "../../store/UsersStore";
 import { Request, Response } from "express";
+import container from "../../infrastructure/container";
+import { UsersService } from "../../modules/users/UsersService";
 
 export default async (req: Request, res: Response) => {
-  let user = await usersStore.getUser({ username: req.body.user.username });
+  const usersService = container.get(UsersService);
+  let user = await usersService.getUser({ username: req.body.user.username });
   if (user) {
     return res.render('user/signup', {
       title: "Регистрация",
@@ -11,7 +13,7 @@ export default async (req: Request, res: Response) => {
       info: null,
     });
   }
-  user = await usersStore.createUser(req.body.user);
+  user = await usersService.createUser(req.body.user);
   return res.render('user/signup', {
     title: "Регистрация",
     user: user,

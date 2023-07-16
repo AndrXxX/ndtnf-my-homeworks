@@ -1,8 +1,10 @@
-import { usersStore } from "../../../store/UsersStore";
 import { NextFunction, Request, Response } from "express";
+import container from "../../../infrastructure/container";
+import { UsersService } from "../../../modules/users/UsersService";
 
 export default async (req: Request, res: Response, next: NextFunction) => {
-  let user = await usersStore.getUser({ username: req.body.user.username });
+  const usersService = container.get(UsersService);
+  let user = await usersService.getUser({ username: req.body.user.username });
   if (user) {
     return res.status(201).json({
       error: `Пользователь с логином ${user.username} уже зарегистрирован`,
@@ -10,7 +12,7 @@ export default async (req: Request, res: Response, next: NextFunction) => {
       success: false,
     });
   }
-  user = await usersStore.createUser(req.body.user);
+  user = await usersService.createUser(req.body.user);
   req.user = user;
   res.status(201).json({
     error: null,

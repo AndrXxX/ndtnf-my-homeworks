@@ -7,7 +7,7 @@ export class UsersService {
   constructor(private readonly repo: AbstractUsersRepository) {
   }
 
-  getUser(filter: { [propertyName: string]: UserFilter }): Promise<User> {
+  getUser(filter: UserFilter): Promise<User> {
     return this.repo.getUser(filter);
   }
 

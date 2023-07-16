@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import container from "../../infrastructure/container";
-import { User } from "../../models/User";
 import { BooksService } from "../../modules/books/BooksService";
+import { User } from "../../modules/users/user";
 import countersFactory from "../../utils/CountersAccessor";
 
 export default async (req: Request, res: Response, next: NextFunction) => {
