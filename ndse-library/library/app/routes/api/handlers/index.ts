@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   books: {
     fetchAll: require('./BooksFetchAllHandler'),
     fetchById: require('./BookFetchByIdHandler'),
