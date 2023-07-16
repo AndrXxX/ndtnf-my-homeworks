@@ -3,9 +3,12 @@ import { AbstractBooksRepository } from "../modules/books/AbstractBooksRepositor
 import { BooksService } from "../modules/books/BooksService";
 import { AbstractCommentsRepository } from "../modules/comments/AbstractCommentsRepository";
 import { CommentsService } from "../modules/comments/CommentsService";
+import { AbstractCountersRepository } from "../modules/counters/AbstractCountersRepository";
+import { CountersService } from "../modules/counters/CountersService";
 import { PasswordService } from "../modules/password/PasswordService";
 import { AbstractUsersRepository } from "../modules/users/AbstractUsersRepository";
 import { UsersService } from "../modules/users/UsersService";
+import { ApiCountersRepository } from "./ApiCountersRepository";
 import { BcryptPasswordService } from "./BcryptPasswordService";
 import { MongoBooksRepository } from "./MongoBooksRepository";
 import { MongoCommentsRepository } from "./MongoCommentsRepository";
@@ -15,11 +18,13 @@ const container = new Container();
 
 container.bind(AbstractBooksRepository).to(MongoBooksRepository);
 container.bind(AbstractCommentsRepository).to(MongoCommentsRepository);
+container.bind(AbstractCountersRepository).to(ApiCountersRepository);
 container.bind(AbstractUsersRepository).to(MongoUsersRepository);
 container.bind(PasswordService).to(BcryptPasswordService);
 
 container.bind(BooksService).toSelf();
 container.bind(CommentsService).toSelf();
+container.bind(CountersService).toSelf();
 container.bind(UsersService).toSelf();
 
 export default container;
