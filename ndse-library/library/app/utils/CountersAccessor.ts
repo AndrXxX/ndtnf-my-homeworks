@@ -1,4 +1,5 @@
 import axios from "axios";
+import config from "config";
 
 const PROTOCOL = 'http';
 const getUrl = (serviceUrl: string, bookId: string): string => `${PROTOCOL}://${serviceUrl}/counter/${bookId}`;
@@ -36,5 +37,5 @@ class CountersAccessor {
 }
 
 export default {
-  getAccessor: (serviceUrl: string) => new CountersAccessor(serviceUrl),
+  getAccessor: () => new CountersAccessor(config.counterUrl),
 };
