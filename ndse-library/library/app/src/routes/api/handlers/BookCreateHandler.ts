@@ -1,6 +1,6 @@
-import { Request, Response } from 'express'
-import { FilesList } from "intefaces/FilesList";
-import { booksStore } from "store/BooksStore";
+import { FilesList } from "/intefaces/FilesList";
+import { booksStore } from "/store/BooksStore";
+import { Request, Response } from "express";
 
 export default async (req: Request, res: Response) => {
   const params = req.body;

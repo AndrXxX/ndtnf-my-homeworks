@@ -1,5 +1,5 @@
+import { usersStore } from "/store/UsersStore";
 import { NextFunction, Request, Response } from "express";
-import { usersStore } from "store/UsersStore";
 
 export default async (req: Request, res: Response, next: NextFunction) => {
   let user = await usersStore.getUser({ username: req.body.user.username });

@@ -1,5 +1,5 @@
+import { User } from "/models/User";
 import { Request, Response } from "express";
-import { User } from "models/User";
 
 export default async (req: Request, res: Response) => {
   const user = req.user as User;
