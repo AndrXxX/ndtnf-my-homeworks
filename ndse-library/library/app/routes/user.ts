@@ -1,31 +1,37 @@
-const express = require('express');
-const handlers = require('./handlers');
+import express from "express";
+import authMiddleware from "middleware/apiAuth";
+import userLoginFormHandler from "./handlers/UserLoginFormHandler";
+import userLoginHandler from "./handlers/UserLoginHandler";
+import userLogoutHandler from "./handlers/UserLogoutHandler";
+import userProfileHandler from "./handlers/UserProfileHandler";
+import userSignupFormHandler from "./handlers/UserSignupFormHandler";
+import userSignupHandler from "./handlers/UserSignupHandler";
+
 const router = express.Router();
-const authMiddleware = require('../middleware/auth');
 
 router.get('/login',
-  handlers.user.loginForm,
+  userLoginFormHandler,
 );
 
 router.post('/login',
-  handlers.user.login,
+  userLoginHandler,
 );
 
 router.get('/signup',
-  handlers.user.signupForm,
+  userSignupFormHandler,
 );
 
 router.post('/signup',
-  handlers.user.signup,
+  userSignupHandler,
 );
 
 router.get('/logout',
-  handlers.user.logout,
+  userLogoutHandler,
 );
 
 router.get('/me',
   authMiddleware,
-  handlers.user.info,
+  userProfileHandler,
 );
 
-module.exports = router;
+export default router;
