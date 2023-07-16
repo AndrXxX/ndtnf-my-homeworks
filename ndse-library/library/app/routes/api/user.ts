@@ -1,25 +1,28 @@
 import express from "express";
 import passport from "passport";
-import handlers from "./handlers";
+import userLoginHandler from "./handlers/UserLoginHandler";
+import userLogoutHandler from "./handlers/UserLogoutHandler";
+import userProfileHandler from "./handlers/UserProfileHandler";
+import userSignupHandler from "./handlers/UserSignupHandler";
 import authMiddleware from "../../middleware/apiAuth";
 
 const router = express.Router();
 router.post('/login',
   passport.authenticate('local'),
-  handlers.user.login,
+  userLoginHandler,
 );
 
 router.post('/signup',
-  handlers.user.signup,
+  userSignupHandler,
 );
 
 router.post('/logout',
-  handlers.user.logout,
+  userLogoutHandler,
 );
 
 router.get('/me',
   authMiddleware,
-  handlers.user.info,
+  userProfileHandler,
 );
 
 export default router;
