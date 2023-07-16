@@ -4,8 +4,9 @@
   "description": "Домашнее задание к занятию «2.1. Express»\n",
   "main": "index.js",
   "scripts": {
-    "start": "node -r dotenv/config index.js",
-    "dev": "nodemon -r dotenv/config index.js"
+    "compile": "tsc && node build/index.js",
+    "start": "tsc && node -r dotenv/config build/index.js",
+    "dev": "nodemon -e ts  --exec \"npm run compile\""
   },
   "author": "Andrew Garetov <andrew1gar@yandex.ru>",
   "license": "ISC",

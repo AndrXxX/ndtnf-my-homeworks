@@ -3,10 +3,10 @@ import expressSession from "express-session";
 import passport from "passport";
 import { Server } from "socket.io";
 
-import apiRouter from "routes/api";
-import indexRouter from "routes/index";
-import booksRouter from "routes/books";
-import userRouter from "routes/user";
+import apiRouter from "/routes/api";
+import indexRouter from "/routes/index";
+import booksRouter from "/routes/books";
+import userRouter from "/routes/user";
 
 import mongoose from "mongoose";
 import authMiddleware from "./middleware/auth";
