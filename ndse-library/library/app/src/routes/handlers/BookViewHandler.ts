@@ -1,13 +1,13 @@
 import { NextFunction, Request, Response } from "express";
 import container from "../../infrastructure/container";
 import { BooksService } from "../../modules/books/BooksService";
+import { CountersService } from "../../modules/counters/CountersService";
 import { User } from "../../modules/users/user";
-import countersFactory from "../../utils/CountersAccessor";
 
 export default async (req: Request, res: Response, next: NextFunction) => {
   const booksService = container.get(BooksService);
-  const counter = countersFactory.getAccessor();
-  await counter.incr(req.params.id);
+  const countersService = container.get(CountersService);
+  await countersService.incr(req.params.id);
   const book = await booksService.getBook(req.params.id);
   if (!book) {
     return next();
@@ -15,7 +15,7 @@ export default async (req: Request, res: Response, next: NextFunction) => {
   res.render("books/view", {
     title: "Книги | Просмотр",
     book,
-    count: await counter.get(req.params.id),
+    count: await countersService.get(req.params.id),
     username: (req.user as User).username,
   });
 };
