@@ -1,6 +1,7 @@
 import { Document, Schema, model } from 'mongoose'
 
 export interface Book {
+  id: string;
   title: string;
   description?: string;
   authors?: string;
