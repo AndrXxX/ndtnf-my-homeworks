@@ -1,9 +1,6 @@
 import { NextFunction, Request, Response } from "express";
+import { FilesList } from "intefaces/FilesList";
 import { booksStore } from "store/BooksStore";
-
-interface FilesList {
-  [fieldName: string]: Express.Multer.File[];
-}
 
 export default async (req: Request, res: Response, next: NextFunction) => {
   if (await booksStore.hasBook(req.params.id)) {
