@@ -1,10 +1,10 @@
 import express from "express";
+import authMiddleware from "middleware/apiAuth";
 import passport from "passport";
 import userLoginHandler from "./handlers/UserLoginHandler";
 import userLogoutHandler from "./handlers/UserLogoutHandler";
 import userProfileHandler from "./handlers/UserProfileHandler";
 import userSignupHandler from "./handlers/UserSignupHandler";
-import authMiddleware from "../../middleware/apiAuth";
 
 const router = express.Router();
 router.post('/login',
