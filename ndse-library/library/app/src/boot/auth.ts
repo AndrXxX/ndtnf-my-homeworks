@@ -1,8 +1,8 @@
-import { User } from "models/User";
+import { User } from "/models/User";
 import passport from 'passport';
 import passportLocal, { IStrategyOptions, IVerifyOptions, VerifyFunction } from 'passport-local';
-import { usersStore } from "store/UsersStore";
-import checker from '../utils/HashGenerator';
+import { usersStore } from "/store/UsersStore";
+import checker from '/utils/HashGenerator';
 
 type doneVerify = (error: Error | null, user?: User | null, options?: IVerifyOptions) => void;
 

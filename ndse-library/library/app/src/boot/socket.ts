@@ -1,5 +1,5 @@
 import { Server, Socket } from "socket.io";
-import { commentsStore } from "store/CommentsStore";
+import { commentsStore } from "/store/CommentsStore";
 
 const onLoadBookDiscussion = async (socket: Socket, bookId: string) => {
   const comments = await commentsStore.getComments(5, { refTypeId: bookId});
