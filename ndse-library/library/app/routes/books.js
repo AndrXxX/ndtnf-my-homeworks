@@ -1,26 +1,37 @@
-const express = require('express');
-const router = express.Router();
-const error404Middleware = require("../middleware/web404");
-const fileMiddleware = require("../middleware/file");
-const handlers = require('./handlers');
+import express from "express";
+import fileMiddleware from "middleware/file";
+import error404Middleware from "middleware/web404";
+import bookCoverDownloadHandler from "./api/handlers/BookCoverDownloadHandler";
+import bookDownloadHandler from "./api/handlers/BookDownloadHandler";
+import bookCreateFormHandler from "./handlers/BookCreateFormHandler";
+import bookCreateHandler from "./handlers/BookCreateHandler";
+import bookDeleteHandler from "./handlers/BookDeleteHandler";
+import booksFetchAllHandler from "./handlers/BooksFetchAllHandler";
+import bookUpdateFormHandler from "./handlers/BookUpdateFormHandler";
+import bookUpdateHandler from "./handlers/BookUpdateHandler";
+import bookViewHandler from "./handlers/BookViewHandler";
 
-router.get('/', handlers.books.fetchAll);
-router.get('/create', handlers.books.createForm);
+const router = express.Router();
+
+router.get('/', booksFetchAllHandler);
+
+router.get('/create', bookCreateFormHandler);
+
 router.post('/create',
   fileMiddleware.fields([
     {name: 'fileName', maxCount: 1},
     {name: 'fileCover', maxCount: 1}
   ]),
-  handlers.books.create,
+  bookCreateHandler,
 );
 
 router.get('/:id/download-file',
-  handlers.books.download,
+  bookDownloadHandler,
   error404Middleware,
 );
 
 router.get('/:id/download-cover',
-  handlers.books.downloadCover,
+  bookCoverDownloadHandler,
   error404Middleware,
 );
 
@@ -29,7 +40,7 @@ router.get('/:id/update',
     {name: 'fileName', maxCount: 1},
     {name: 'fileCover', maxCount: 1}
   ]),
-  handlers.books.updateForm,
+  bookUpdateFormHandler,
   error404Middleware,
 );
 
@@ -38,18 +49,18 @@ router.post('/:id/update',
     {name: 'fileName', maxCount: 1},
     {name: 'fileCover', maxCount: 1}
   ]),
-  handlers.books.update,
+  bookUpdateHandler,
   error404Middleware,
 );
 
 router.post('/:id/delete',
-  handlers.books.delete,
+  bookDeleteHandler,
   error404Middleware,
 );
 
 router.get('/:id',
-  handlers.books.view,
+  bookViewHandler,
   error404Middleware,
 );
 
-module.exports = router;
+export default router;
