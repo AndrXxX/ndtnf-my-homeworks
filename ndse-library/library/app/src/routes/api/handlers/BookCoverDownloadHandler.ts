@@ -1,5 +1,5 @@
-import { booksStore } from "/store/BooksStore";
-import uploadDirAccessor from "/utils/UploadDirAccessor";
+import { booksStore } from "../../../store/BooksStore";
+import uploadDirAccessor from "../../../utils/UploadDirAccessor";
 import { NextFunction, Request, Response } from "express";
 import path from "path";
 

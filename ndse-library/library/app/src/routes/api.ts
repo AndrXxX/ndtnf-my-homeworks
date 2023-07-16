@@ -1,5 +1,5 @@
-import error404Middleware from "/middleware/api404";
-import authMiddleware from "/middleware/apiAuth";
+import error404Middleware from "../middleware/api404";
+import authMiddleware from "../middleware/apiAuth";
 import express from "express";
 import booksRouter from "./api/books";
 import userRouter from "./api/user";

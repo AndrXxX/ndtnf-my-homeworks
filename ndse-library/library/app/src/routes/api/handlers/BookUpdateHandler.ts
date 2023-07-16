@@ -1,5 +1,5 @@
-import { FilesList } from "/interfaces/FilesList";
-import { booksStore } from "/store/BooksStore";
+import { FilesList } from "../../../interfaces/FilesList";
+import { booksStore } from "../../../store/BooksStore";
 import { NextFunction, Request, Response } from "express";
 
 export default async (req: Request, res: Response, next: NextFunction) => {

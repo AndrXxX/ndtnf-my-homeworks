@@ -1,5 +1,5 @@
-import { User, UserModel } from "/models/User";
-import generator from "/utils/HashGenerator";
+import { User, UserModel } from "../models/User";
+import generator from "../utils/HashGenerator";
 
 interface iUserFilter {
   [propertyName: string]: string | number

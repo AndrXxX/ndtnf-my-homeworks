@@ -1,5 +1,5 @@
-import error404Middleware from "/middleware/api404";
-import fileMiddleware from "/middleware/file";
+import error404Middleware from "../../middleware/api404";
+import fileMiddleware from "../../middleware/file";
 import express from "express";
 import bookCreateHandler from "./handlers/BookCreateHandler";
 import bookDeleteHandler from "./handlers/BookDeleteHandler";

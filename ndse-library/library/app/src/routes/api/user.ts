@@ -1,4 +1,4 @@
-import authMiddleware from "/middleware/apiAuth";
+import authMiddleware from "../../middleware/apiAuth";
 import express from "express";
 import passport from "passport";
 import userLoginHandler from "./handlers/UserLoginHandler";

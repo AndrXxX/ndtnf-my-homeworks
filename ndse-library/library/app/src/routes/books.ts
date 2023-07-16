@@ -1,5 +1,5 @@
-import fileMiddleware from "/middleware/file";
-import error404Middleware from "/middleware/web404";
+import fileMiddleware from "../middleware/file";
+import error404Middleware from "../middleware/web404";
 import express from "express";
 import bookCoverDownloadHandler from "./api/handlers/BookCoverDownloadHandler";
 import bookDownloadHandler from "./api/handlers/BookDownloadHandler";
