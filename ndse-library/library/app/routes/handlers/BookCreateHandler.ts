@@ -1,9 +1,6 @@
 import { Request, Response } from 'express'
+import { FilesList } from "intefaces/FilesList";
 import { booksStore } from "store/BooksStore";
-
-interface FilesList {
-  [fieldName: string]: Express.Multer.File[];
-}
 
 export default async (req: Request, res: Response) => {
   const params = req.body;
@@ -11,5 +8,5 @@ export default async (req: Request, res: Response) => {
   files.fileName && (params.fileName = files.fileName[0].path);
   files.fileCover && (params.fileCover = files.fileCover[0].path);
   const book = await booksStore.createBook(params);
-  res.redirect(`/api/books/${book.id}`);
+  res.redirect(`/books/${book.id}`);
 };
