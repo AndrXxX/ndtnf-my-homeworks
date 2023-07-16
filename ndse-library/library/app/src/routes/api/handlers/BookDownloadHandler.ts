@@ -8,7 +8,7 @@ export default async (req: Request, res: Response, next: NextFunction) => {
   if (!book || !book.fileName) {
     return next();
   }
-  const file = path.join(__dirname, "../../../", book.fileName);
+  const file = path.join(__dirname, "../../../../", book.fileName);
   if (!uploadDirAccessor.checkAccess(file)) {
     return next();
   }

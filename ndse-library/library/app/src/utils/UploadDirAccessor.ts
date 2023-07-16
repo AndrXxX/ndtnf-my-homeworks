@@ -17,8 +17,8 @@ const checkAccess = (path: string) => {
 
 const createBookUploadDir = () => {
   const paths = [
-    path.join(__dirname, "../", config.bookUploadPath),
-    path.join(__dirname, "../", config.imagesUploadPath),
+    path.join(__dirname, "../../", config.bookUploadPath),
+    path.join(__dirname, "../../", config.imagesUploadPath),
   ];
   paths.forEach(function (path) {
     if (checkAccess(path)) {
