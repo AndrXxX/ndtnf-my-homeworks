@@ -1,9 +1,9 @@
-const express = require('express');
-const router = express.Router();
-const error404Middleware = require("../../middleware/api404");
-const fileMiddleware = require('../../middleware/file');
-const handlers = require('./handlers');
+import express from "express";
+import error404Middleware from "middleware/api404";
+import fileMiddleware from "../../middleware/file";
+import handlers from "./handlers";
 
+const router = express.Router();
 router.get('/', handlers.books.fetchAll);
 
 router.get('/:id/download',
@@ -38,4 +38,4 @@ router.delete('/:id',
   error404Middleware,
 );
 
-module.exports = router;
+export default router;
