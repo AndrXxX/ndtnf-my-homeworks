@@ -1,14 +1,20 @@
-## Домашнее задание к занятию «1.2 Система типов TypeScript. ООП. SOLID»
+## Домашнее задание к занятию «1.3. IoС и DI. Библиотека reflect-metadata»
 
-ТЗ доступно по [ссылке](https://github.com/netology-code/ndtnf-homeworks/blob/master/002-TypeScript).
+ТЗ доступно по [ссылке](https://github.com/netology-code/ndtnf-homeworks/blob/master/003-Ioc).
+
+Ссылки на файлы для быстрого перехода:
+* [container](library/app/src/infrastructure/container.ts)
+* [AbstractBooksRepository](library/app/src/modules/books/AbstractBooksRepository.ts)
+* [BooksService](library/app/src/modules/books/BooksService.ts)
+* [MongoBooksRepository](library/app/src/infrastructure/MongoBooksRepository.ts)
 
 <details>
 <summary>Включает в себя предыдущие задания</summary>
 
+<details>
+<summary>1. NDSE - Настройка окружения Node.js и библиотека Express.js</summary>
 
-### NDSE - Настройка окружения Node.js и библиотека Express.js
-
-#### Блок 2: Библиотека Express.js
+###### Блок 2: Библиотека Express.js
 <details>
 <summary>Домашнее задание к занятию «2.1. Express»</summary>
 
@@ -49,6 +55,21 @@
 <summary>Домашнее задание к занятию «2.9. Realtime-взаимодействие с сервером, протокол websocket»</summary>
 
 ТЗ доступно по [ссылке](https://github.com/netology-code/ndse-homeworks/tree/master/013-websocket).
+</details>
+
+</details>
+
+<details>
+<summary>2. NDTNF - TypeScript, Nest.js, Yandex Cloud</summary>
+
+###### Блок 1: TypeScript
+
+<details>
+<summary>Домашнее задание к занятию «1.2 Система типов TypeScript. ООП. SOLID»</summary>
+
+ТЗ доступно по [ссылке](https://github.com/netology-code/ndtnf-homeworks/blob/master/002-TypeScript).
+</details>
+
 </details>
 
 </details>
