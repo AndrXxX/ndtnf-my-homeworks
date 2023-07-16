@@ -1,6 +1,6 @@
 import { Request } from "express";
 import multer from "multer";
-import config from "../config";
+import config from "/config";
 
 const MAX_FILE_SIZE = 10*1024*1024;
 const allowedTypes = [

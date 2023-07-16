@@ -1,4 +1,4 @@
-import { BookModel, Book } from "models/Book";
+import { BookModel, Book } from "/models/Book";
 
 export class BooksStore {
   async createBook(book: Book): Promise<Book> {
