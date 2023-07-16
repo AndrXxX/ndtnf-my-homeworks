@@ -11,10 +11,10 @@ import userRouter from "/routes/user";
 import mongoose from "mongoose";
 import authMiddleware from "./middleware/auth";
 import error404Middleware from "./middleware/web404";
-import config from "config";
+import config from "/config";
 import uploadDirAccessor from "./utils/UploadDirAccessor";
-import auth from "boot/auth";
-import bootSocket from "boot/socket";
+import auth from "/boot/auth";
+import bootSocket from "/boot/socket";
 
 const app = express();
 auth();

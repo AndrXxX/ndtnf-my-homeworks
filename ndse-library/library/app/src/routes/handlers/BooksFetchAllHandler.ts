@@ -1,5 +1,5 @@
-import { Request, Response } from 'express'
-import { booksStore } from "store/BooksStore";
+import { booksStore } from "/store/BooksStore";
+import { Request, Response } from "express";
 
 export default async (req: Request, res: Response) => {
   res.render("books/index", {

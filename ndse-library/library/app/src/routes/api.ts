@@ -1,8 +1,8 @@
+import error404Middleware from "/middleware/api404";
+import authMiddleware from "/middleware/apiAuth";
 import express from "express";
-import userRouter from "./api/user";
 import booksRouter from "./api/books";
-import error404Middleware from "../middleware/api404";
-import authMiddleware from "../middleware/apiAuth";
+import userRouter from "./api/user";
 
 const router = express.Router();
 router.use('/user', userRouter);

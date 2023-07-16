@@ -1,7 +1,7 @@
+import { User } from "/models/User";
+import { booksStore } from "/store/BooksStore";
+import countersFactory from "/utils/CountersAccessor";
 import { NextFunction, Request, Response } from "express";
-import { User } from "models/User";
-import { booksStore } from "store/BooksStore";
-import countersFactory from "utils/CountersAccessor";
 
 export default async (req: Request, res: Response, next: NextFunction) => {
   const counter = countersFactory.getAccessor();
