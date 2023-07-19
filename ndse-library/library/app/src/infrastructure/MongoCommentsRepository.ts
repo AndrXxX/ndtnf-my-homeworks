@@ -1,13 +1,13 @@
 import { injectable } from "inversify";
 import { Document, model } from "mongoose";
 import { Comment } from '../modules/comments/comment';
-import { AbstractCommentsRepository, CommentsFilter } from "../modules/comments/AbstractCommentsRepository";
+import { iCommentsRepository, CommentsFilter } from "../modules/comments/CommentsRepository";
 import { commentSchema } from "./mongo.schemas/comment.schema";
 
 const CommentModel = model<Comment & Document>('Comment', commentSchema);
 
 @injectable()
-export class MongoCommentsRepository implements AbstractCommentsRepository {
+export class MongoCommentsRepository implements iCommentsRepository {
   async getComments(limit: number, params: CommentsFilter): Promise<Comment[]> {
     return CommentModel.find(params).sort({ 'date': -1, '_id': -1 }).limit(limit).select('-__v');
   }

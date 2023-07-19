@@ -1,7 +1,7 @@
 import { Container } from "inversify";
 import { iBooksRepository } from "../modules/books/BooksRepository";
 import { BooksService } from "../modules/books/BooksService";
-import { AbstractCommentsRepository } from "../modules/comments/AbstractCommentsRepository";
+import { iCommentsRepository } from "../modules/comments/CommentsRepository";
 import { CommentsService } from "../modules/comments/CommentsService";
 import { AbstractCountersRepository } from "../modules/counters/AbstractCountersRepository";
 import { CountersService } from "../modules/counters/CountersService";
@@ -18,7 +18,7 @@ import TYPES from "./types";
 const container = new Container();
 
 container.bind<iBooksRepository>(TYPES.BooksRepository).to(MongoBooksRepository).inSingletonScope();
-container.bind<AbstractCommentsRepository>(TYPES.CommentsRepository).to(MongoCommentsRepository);
+container.bind<iCommentsRepository>(TYPES.CommentsRepository).to(MongoCommentsRepository);
 container.bind<AbstractCountersRepository>(TYPES.CountersRepository).to(ApiCountersRepository);
 container.bind<AbstractUsersRepository>(TYPES.UsersRepository).to(MongoUsersRepository);
 container.bind<PasswordService>(TYPES.PasswordService).to(BcryptPasswordService);
