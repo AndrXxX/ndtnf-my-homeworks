@@ -6,7 +6,7 @@ export type UserFilter = {
   username?: string;
 }
 
-export interface AbstractUsersRepository {
+export interface iUsersRepository {
   getUser(filter: UserFilter): Promise<User>;
   createUser(params: User): Promise<User>;
 }

@@ -1,10 +1,10 @@
 import { injectable } from "inversify";
-import { AbstractUsersRepository, UserFilter } from "./AbstractUsersRepository";
+import { iUsersRepository, UserFilter } from "./UsersRepository";
 import { User } from "./user";
 
 @injectable()
 export class UsersService {
-  constructor(private readonly repo: AbstractUsersRepository) {
+  constructor(private readonly repo: iUsersRepository) {
   }
 
   getUser(filter: UserFilter): Promise<User> {
