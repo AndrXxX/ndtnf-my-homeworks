@@ -1,14 +1,20 @@
-## Домашнее задание к занятию «1.2 Система типов TypeScript. ООП. SOLID»
+## Домашнее задание к занятию «1.3. IoС и DI. Библиотека reflect-metadata»
 
-ТЗ доступно по [ссылке](https://github.com/netology-code/ndtnf-homeworks/blob/master/002-TypeScript).
+ТЗ доступно по [ссылке](https://github.com/netology-code/ndtnf-homeworks/blob/master/003-Ioc).
+
+Ссылки на файлы для быстрого перехода:
+* [container](library/app/src/infrastructure/container.ts)
+* [AbstractBooksRepository](library/app/src/modules/books/AbstractBooksRepository.ts)
+* [BooksService](library/app/src/modules/books/BooksService.ts)
+* [MongoBooksRepository](library/app/src/infrastructure/MongoBooksRepository.ts)
 
 <details>
 <summary>Включает в себя предыдущие задания</summary>
 
+<details>
+<summary>1. NDSE - Настройка окружения Node.js и библиотека Express.js</summary>
 
-### NDSE - Настройка окружения Node.js и библиотека Express.js
-
-#### Блок 2: Библиотека Express.js
+###### Блок 2: Библиотека Express.js
 <details>
 <summary>Домашнее задание к занятию «2.1. Express»</summary>
 
@@ -53,6 +59,21 @@
 
 </details>
 
+<details>
+<summary>2. NDTNF - TypeScript, Nest.js, Yandex Cloud</summary>
+
+###### Блок 1: TypeScript
+
+<details>
+<summary>Домашнее задание к занятию «1.2 Система типов TypeScript. ООП. SOLID»</summary>
+
+ТЗ доступно по [ссылке](https://github.com/netology-code/ndtnf-homeworks/blob/master/002-TypeScript).
+</details>
+
+</details>
+
+</details>
+
 Использование:
 1. Для разработки:
    * `docker compose -f docker-compose.dev.yml up`
@@ -63,9 +84,33 @@
 3. Из готовых образов на hub.docker.com:
    * `docker compose -f docker-compose.prod.yml up`
 
-Приложение будет доступно по адресу [http://localhost:3002/](http://localhost:3002/).
+При стандартных настройках приложение будет доступно по адресу [http://localhost:3002/](http://localhost:3002/).
 
-Ссылки на файлы для быстрого перехода:
-* [library/app/models/Book.ts](library/app/models/Book.ts)
-* [library/app/store/BooksRepository.ts](library/app/store/BooksRepository.ts)
-* [library/app/tsconfig.json](library/app/tsconfig.json)
+Можно изменить настройки запуска docker-compose с помощью .env. Пример файла: [.env-example](config/.env.example)
+Нужно переименовать его в `.env` и запускать приложение добавив конфиг:
+
+1. Для разработки:
+   * `docker compose --env-file config/.env -f docker-compose.dev.yml up`
+
+2. Из компактных образов:
+   * `docker compose --env-file config/.env -f docker-compose.build.yml up`
+
+3. Из готовых образов на hub.docker.com:
+   * `docker compose --env-file config/.env -f docker-compose.prod.yml up`
+
+<details>
+<summary>Описание настроек .env для docker-compose</summary>
+
+* `DB_NAME` - название БД
+* `DB_USERNAME` - имя пользователя
+* `DB_PASSWORD` - имя пользователя
+
+Важно! Вышеуказанные настройки корректно проинициализируются в MongoDB только при первом запуске.
+Если в дальнейшем их изменить, то эффекта не будет. Для применения нужно будет очистить папку `db` и после этого запускать `docker-compose`
+
+* `COOKIE_SECRET` - параметр для express session
+* `LIBRARY_SERVICE_PORT` - порт, по которому будет доступно приложение библиотека на локальном компьютере
+* `COUNTER_SERVICE_PORT` - порт, по которому будет доступно приложение счетчик на локальном компьютере
+* `MONGODB_PORT` - внешний порт для подключения к MongoDb
+* `MONGO_EXPRESS_PORT` - внешний порт, по которому будет доступна админка MONGO EXPRESS
+</details>
