@@ -13,14 +13,15 @@ import { BcryptPasswordService } from "./BcryptPasswordService";
 import { MongoBooksRepository } from "./MongoBooksRepository";
 import { MongoCommentsRepository } from "./MongoCommentsRepository";
 import { MongoUsersRepository } from "./MongoUsersRepository";
+import TYPES from "./types";
 
 const container = new Container();
 
-container.bind(AbstractBooksRepository).to(MongoBooksRepository);
-container.bind(AbstractCommentsRepository).to(MongoCommentsRepository);
-container.bind(AbstractCountersRepository).to(ApiCountersRepository);
-container.bind(AbstractUsersRepository).to(MongoUsersRepository);
-container.bind(PasswordService).to(BcryptPasswordService);
+container.bind<AbstractBooksRepository>(TYPES.BooksRepository).to(MongoBooksRepository).inSingletonScope();
+container.bind<AbstractCommentsRepository>(TYPES.CommentsRepository).to(MongoCommentsRepository);
+container.bind<AbstractCountersRepository>(TYPES.CountersRepository).to(ApiCountersRepository);
+container.bind<AbstractUsersRepository>(TYPES.UsersRepository).to(MongoUsersRepository);
+container.bind<PasswordService>(TYPES.PasswordService).to(BcryptPasswordService);
 
 container.bind(BooksService).toSelf();
 container.bind(CommentsService).toSelf();
