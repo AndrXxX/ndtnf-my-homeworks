@@ -1,4 +1,4 @@
-export abstract class iCountersRepository {
-  abstract get(bookId: string): Promise<number>;
-  abstract incr(bookId: string): Promise<number>;
+export interface iCountersRepository {
+  get(bookId: string): Promise<number>;
+  incr(bookId: string): Promise<number>;
 }
