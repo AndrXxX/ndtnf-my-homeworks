@@ -6,7 +6,7 @@ export type UserFilter = {
   username?: string;
 }
 
-export abstract class AbstractUsersRepository {
-  abstract getUser(filter: UserFilter): Promise<User>;
-  abstract createUser(params: User): Promise<User>;
+export interface AbstractUsersRepository {
+  getUser(filter: UserFilter): Promise<User>;
+  createUser(params: User): Promise<User>;
 }
