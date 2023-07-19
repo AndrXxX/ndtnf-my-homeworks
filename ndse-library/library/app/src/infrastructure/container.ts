@@ -5,7 +5,7 @@ import { iCommentsRepository } from "../modules/comments/CommentsRepository";
 import { CommentsService } from "../modules/comments/CommentsService";
 import { iCountersRepository } from "../modules/counters/CountersRepository";
 import { CountersService } from "../modules/counters/CountersService";
-import { PasswordService } from "../modules/password/PasswordService";
+import { iPasswordService } from "../modules/password/PasswordService";
 import { AbstractUsersRepository } from "../modules/users/AbstractUsersRepository";
 import { UsersService } from "../modules/users/UsersService";
 import { ApiCountersRepository } from "./ApiCountersRepository";
@@ -21,7 +21,7 @@ container.bind<iBooksRepository>(TYPES.BooksRepository).to(MongoBooksRepository)
 container.bind<iCommentsRepository>(TYPES.CommentsRepository).to(MongoCommentsRepository);
 container.bind<iCountersRepository>(TYPES.CountersRepository).to(ApiCountersRepository);
 container.bind<AbstractUsersRepository>(TYPES.UsersRepository).to(MongoUsersRepository);
-container.bind<PasswordService>(TYPES.PasswordService).to(BcryptPasswordService);
+container.bind<iPasswordService>(TYPES.PasswordService).to(BcryptPasswordService);
 
 container.bind(BooksService).toSelf();
 container.bind(CommentsService).toSelf();
