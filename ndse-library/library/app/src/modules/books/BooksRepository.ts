@@ -1,6 +1,6 @@
 import { Book } from "./book";
 
-export interface AbstractBooksRepository {
+export interface iBooksRepository {
   getBooks(): Promise<Book[]>;
   hasBook(id: string): Promise<boolean>;
   getBook(id: string): Promise<Book | null>;

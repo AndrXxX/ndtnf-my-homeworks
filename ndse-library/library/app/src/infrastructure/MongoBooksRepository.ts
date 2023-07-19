@@ -1,13 +1,13 @@
 import { injectable } from "inversify";
 import { Document, model } from "mongoose";
-import { AbstractBooksRepository } from "../modules/books/AbstractBooksRepository";
+import { iBooksRepository } from "../modules/books/BooksRepository";
 import { Book } from '../modules/books/book';
 import { bookSchema } from './mongo.schemas/book.schema';
 
 const BookModel = model<Book & Document>('Book', bookSchema);
 
 @injectable()
-export class MongoBooksRepository implements AbstractBooksRepository {
+export class MongoBooksRepository implements iBooksRepository {
   async getBooks(): Promise<Book[]> {
     try {
       return await BookModel.find().select('-__v');

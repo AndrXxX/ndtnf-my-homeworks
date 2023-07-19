@@ -71,7 +71,7 @@
 
 Ссылки на файлы для быстрого перехода:
 * [container](library/app/src/infrastructure/container.ts)
-* [AbstractBooksRepository](library/app/src/modules/books/AbstractBooksRepository.ts)
+* [BooksRepository](library/app/src/modules/books/BooksRepository.ts)
 * [BooksService](library/app/src/modules/books/BooksService.ts)
 * [MongoBooksRepository](library/app/src/infrastructure/MongoBooksRepository.ts)
 
