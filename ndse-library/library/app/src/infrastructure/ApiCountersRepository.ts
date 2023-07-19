@@ -1,7 +1,7 @@
 import axios from "axios";
 import { injectable } from "inversify";
 import config from "../config";
-import { AbstractCountersRepository } from "../modules/counters/AbstractCountersRepository";
+import { iCountersRepository } from "../modules/counters/CountersRepository";
 
 const PROTOCOL = 'http';
 const getUrl = (serviceUrl: string, bookId: string): string => `${PROTOCOL}://${serviceUrl}/counter/${bookId}`;
@@ -26,7 +26,7 @@ async function getResult(url: string, method: string): Promise<number> {
 }
 
 @injectable()
-export class ApiCountersRepository implements AbstractCountersRepository {
+export class ApiCountersRepository implements iCountersRepository {
   url: string;
   constructor() {
     this.url = config.counterUrl;

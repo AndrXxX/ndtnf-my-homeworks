@@ -3,7 +3,7 @@ import { iBooksRepository } from "../modules/books/BooksRepository";
 import { BooksService } from "../modules/books/BooksService";
 import { iCommentsRepository } from "../modules/comments/CommentsRepository";
 import { CommentsService } from "../modules/comments/CommentsService";
-import { AbstractCountersRepository } from "../modules/counters/AbstractCountersRepository";
+import { iCountersRepository } from "../modules/counters/CountersRepository";
 import { CountersService } from "../modules/counters/CountersService";
 import { PasswordService } from "../modules/password/PasswordService";
 import { AbstractUsersRepository } from "../modules/users/AbstractUsersRepository";
@@ -19,7 +19,7 @@ const container = new Container();
 
 container.bind<iBooksRepository>(TYPES.BooksRepository).to(MongoBooksRepository).inSingletonScope();
 container.bind<iCommentsRepository>(TYPES.CommentsRepository).to(MongoCommentsRepository);
-container.bind<AbstractCountersRepository>(TYPES.CountersRepository).to(ApiCountersRepository);
+container.bind<iCountersRepository>(TYPES.CountersRepository).to(ApiCountersRepository);
 container.bind<AbstractUsersRepository>(TYPES.UsersRepository).to(MongoUsersRepository);
 container.bind<PasswordService>(TYPES.PasswordService).to(BcryptPasswordService);
 
