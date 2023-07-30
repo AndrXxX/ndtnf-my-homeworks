@@ -1,10 +1,12 @@
-import { injectable } from "inversify";
-import { iCommentsRepository, CommentsFilter } from "./CommentsRepository";
+import { inject, injectable } from "inversify";
+import TYPES from "../../infrastructure/types";
 import { Comment } from "./comment";
+import { CommentsFilter, iCommentsRepository } from "./CommentsRepository";
 
 @injectable()
 export class CommentsService {
-  constructor(private readonly repo: iCommentsRepository) {}
+  @inject(TYPES.CommentsRepository)
+  private readonly repo: iCommentsRepository
 
   getComments(limit: number, params: CommentsFilter): Promise<Comment[]> {
     return this.repo.getComments(limit, params);

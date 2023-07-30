@@ -1,9 +1,11 @@
-import { injectable } from "inversify";
+import { inject, injectable } from "inversify";
+import TYPES from "../../infrastructure/types";
 import { iCountersRepository } from "./CountersRepository";
 
 @injectable()
 export class CountersService {
-  constructor(private readonly repo: iCountersRepository) {}
+  @inject(TYPES.CountersRepository)
+  private readonly repo: iCountersRepository
 
   get(bookId: string): Promise<number> {
     return this.repo.get(bookId);

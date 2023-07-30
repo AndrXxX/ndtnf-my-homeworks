@@ -1,10 +1,12 @@
-import { injectable } from "inversify";
-import { iBooksRepository } from "./BooksRepository";
+import { inject, injectable } from "inversify";
+import TYPES from "../../infrastructure/types";
 import { Book } from "./book";
+import { iBooksRepository } from "./BooksRepository";
 
 @injectable()
 export class BooksService {
-  constructor(private readonly repo: iBooksRepository) {}
+  @inject(TYPES.BooksRepository)
+  private readonly repo: iBooksRepository
 
   getBooks(): Promise<Book[]> {
     return this.repo.getBooks();
