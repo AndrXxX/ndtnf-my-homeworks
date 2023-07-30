@@ -1,12 +1,6 @@
-## Домашнее задание к занятию «1.3. IoС и DI. Библиотека reflect-metadata»
+## Домашнее задание к занятию «1.4. Перенос и интеграция JavaScript проекта на TypeScript»
 
-ТЗ доступно по [ссылке](https://github.com/netology-code/ndtnf-homeworks/blob/master/003-Ioc).
-
-Ссылки на файлы для быстрого перехода:
-* [container](library/app/src/infrastructure/container.ts)
-* [AbstractBooksRepository](library/app/src/modules/books/AbstractBooksRepository.ts)
-* [BooksService](library/app/src/modules/books/BooksService.ts)
-* [MongoBooksRepository](library/app/src/infrastructure/MongoBooksRepository.ts)
+ТЗ доступно по [ссылке](https://github.com/netology-code/ndtnf-homeworks/tree/master/004-Migrate%20to%20Typescript).
 
 <details>
 <summary>Включает в себя предыдущие задания</summary>
@@ -68,6 +62,19 @@
 <summary>Домашнее задание к занятию «1.2 Система типов TypeScript. ООП. SOLID»</summary>
 
 ТЗ доступно по [ссылке](https://github.com/netology-code/ndtnf-homeworks/blob/master/002-TypeScript).
+</details>
+
+<details>
+<summary>Домашнее задание к занятию «1.3. IoС и DI. Библиотека reflect-metadata»</summary>
+
+ТЗ доступно по [ссылке](https://github.com/netology-code/ndtnf-homeworks/blob/master/003-Ioc).
+
+Ссылки на файлы для быстрого перехода:
+* [container](library/app/src/infrastructure/container.ts)
+* [BooksRepository](library/app/src/modules/books/BooksRepository.ts)
+* [BooksService](library/app/src/modules/books/BooksService.ts)
+* [MongoBooksRepository](library/app/src/infrastructure/MongoBooksRepository.ts)
+
 </details>
 
 </details>

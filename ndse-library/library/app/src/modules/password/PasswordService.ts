@@ -1,4 +1,4 @@
-export abstract class PasswordService {
-  abstract isValid(password: string, hash: string): boolean;
-  abstract generate(password: string): string;
+export interface iPasswordService {
+  isValid(password: string, hash: string): boolean;
+  generate(password: string): string;
 }

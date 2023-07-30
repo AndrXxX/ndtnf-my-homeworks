@@ -1,7 +1,8 @@
 
 import passport from 'passport';
 import passportLocal, { IStrategyOptions, IVerifyOptions, VerifyFunction } from 'passport-local';
-import { PasswordService } from "../modules/password/PasswordService";
+import { iPasswordService } from "../modules/password/PasswordService";
+import TYPES from "../infrastructure/types";
 import { User } from "../modules/users/user";
 import container from "../infrastructure/container";
 import { UsersService } from "../modules/users/UsersService";
@@ -10,7 +11,7 @@ type doneVerify = (error: Error | null, user?: User | null, options?: IVerifyOpt
 
 const verify: VerifyFunction = async (username: string, password: string, done: doneVerify) => {
   const usersService = container.get(UsersService);
-  const checker = container.get(PasswordService);
+  const checker = container.get<iPasswordService>(TYPES.PasswordService);
   const user = await usersService.getUser({ username });
   if (!user || !checker.isValid(password, user.password)) {
     return done(new Error('Неверное имя или пароль'));
